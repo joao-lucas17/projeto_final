@@ -16,6 +16,6 @@ class Relatorio extends CI_Controller {
         $this->db->join("desperdicio", "refeicao.idrefeicao = desperdicio.refeicao_idrefeicao");
         $dados["dados"] = $this->db->get("refeicao")->result();
         $this->load->view("relatorio/desperdicio", $dados);
-    }
+    }//teste
 
 }
