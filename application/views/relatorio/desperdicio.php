@@ -21,6 +21,7 @@
         <link rel="manifest" href="/docs/4.5/assets/img/favicons/manifest.json">
         <link rel="mask-icon" href="/docs/4.5/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
         <link rel="icon" href="/docs/4.5/assets/img/favicons/favicon.ico">
+        <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" type="text/css" />
         <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
         <meta name="theme-color" content="#563d7c">
     </head>
@@ -29,7 +30,7 @@
             <div class="bDiv">
                 <div id="main-table-box" class="main-table-box">
                     <div id="ajax_list" class="ajax_list">
-                        <table class="table table-striped">
+                        <table class="table table-striped" id="relatorio">
 
                             <thead class="thead-dark">
                                 <tr>
@@ -48,7 +49,7 @@
                                         <td width="16%"><div class="text-center"><?php $data = explode("-", $d->dia);
                                             echo "$data[2]/$data[1]/$data[0]"; ?></div></td>
                                         <td width="16%"><div class="text-center"><?= $d->tipo ?></div></td>
-                                        <td width="16%"><div class="text-center"><?= $d->cardapio_idcardapio ?></div></td>
+                                        <td width="16%"><div class="text-center"><?= $d->nome ?></div></td>
                                         <td width="16%"><div class="text-center"><?= $d->quantidade_pessoas ?></div></td>
                                         <td width="16%"><div class="text-center"><?= $d->peso ?></div></td>
                                         <td width="16%"><div class="text-center"><?= $d->observacao ?></div></td>
@@ -61,6 +62,13 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="<?php echo base_url() . 'bootstrap/js/jquery-3.5.1.slim.min.js'; ?>"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready( function () {
+                $('#relatorio').DataTable();
+            } );
+        </script>
     </body>
 
 </html>

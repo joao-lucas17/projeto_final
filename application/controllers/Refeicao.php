@@ -20,7 +20,7 @@ class Refeicao extends CI_Controller{
         $crud->display_as("cardapio_idcardapio", "Cardapio");
         
         $form = $crud->render();
-        $this->template->load("template/template_restrito", "crud/index", $form);
+        $this->template->load("template/adminlte/admin", "crud/index", $form);
     }
     
    
