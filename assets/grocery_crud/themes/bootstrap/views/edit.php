@@ -9,18 +9,19 @@ $this->set_js_lib($this->default_javascript_path . '/jquery_plugins/config/jquer
 <div class="row" data-unique-hash="<?php echo $unique_hash; ?>">
     <div class="col-lg-12">
         <!-- Horizontal Form -->
-        <div class="box box-info">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?php echo $subject ?></h3>
+        <div class="card card-info card-outline">
+            <div class="card-header">
+                <h3 class="card-title"><?php echo $subject ?></h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->            
             <?php echo form_open($update_url, 'method="post" id="crudForm"  enctype="multipart/form-data" class="form-horizontal"'); ?>
-            <div class="box-body">
+            <div class="card-body">
 
                 <?php foreach ($fields as $field) { ?>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label"><?php echo $input_fields[$field->field_name]->display_as; ?><?php echo ($input_fields[$field->field_name]->required) ? "<span class='required'>*</span> " : ""; ?> :</label>
+                    <div class="form-group row mb-2">
+                        <label class="col-sm-2 col-form-label-sm d-sm-block d-md-none"><?php echo $input_fields[$field->field_name]->display_as; ?><?php echo ($input_fields[$field->field_name]->required) ? "<span class='required'>*</span> " : ""; ?> :</label>
+                        <label class="col-sm-2 col-form-label-sm text-right d-none d-md-block"><?php echo $input_fields[$field->field_name]->display_as; ?><?php echo ($input_fields[$field->field_name]->required) ? "<span class='required'>*</span> " : ""; ?> :</label>
 
                         <div class="col-sm-10">
                             <?php echo $input_fields[$field->field_name]->input ?>
@@ -43,7 +44,7 @@ $this->set_js_lib($this->default_javascript_path . '/jquery_plugins/config/jquer
 
             </div>
             <!-- /.box-body -->
-            <div class="box-footer">
+            <div class="card-footer">
 
                 <input id="form-button-save" type='submit' value='<?php echo $this->l('form_update_changes'); ?>'  class="btn btn-large btn-success"/>
                 <?php if (!$this->unset_back_to_list) { ?>

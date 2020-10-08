@@ -2,7 +2,7 @@
 $column_width = (int) (80 / count($columns));
 if (!empty($list)) {
     ?>
-    <table cellspacing="0" cellpadding="0" border="0" id="flex1" class="table table-bordered table-striped">
+    <table id="flex1" class="table table-bordered table-striped">
         <thead>
             <tr class=''>
                 <?php foreach ($columns as $column) { ?>

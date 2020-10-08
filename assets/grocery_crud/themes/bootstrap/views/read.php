@@ -13,18 +13,19 @@
 <div class="row" data-unique-hash="<?php echo $unique_hash; ?>">
     <div class="col-lg-12">
         <!-- Horizontal Form -->
-        <div class="box box-info">
-            <div class="box-header with-border">
-                <h3 class="box-title"><?php echo $subject ?></h3>
+        <div class="card card-info card-outline">
+            <div class="card-header with-border">
+                <h5 class="card-title"><?php echo $subject ?></h5>
             </div>
             <!-- /.box-header -->
             <!-- form start -->            
             <?php echo form_open($read_url, 'method="post" id="crudForm"  enctype="multipart/form-data" class="form-horizontal"'); ?>
-            <div class="box-body">
+            <div class="card-body">
 
                 <?php foreach ($fields as $field) { ?>
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label"><?php echo $input_fields[$field->field_name]->display_as; ?><?php echo ($input_fields[$field->field_name]->required) ? "<span class='required'>*</span> " : ""; ?> :</label>
+                    <div class="form-group row mb-1">
+                        <label class="col-sm-2 col-form-label-sm d-sm-block d-md-none"><?php echo $input_fields[$field->field_name]->display_as; ?><?php echo ($input_fields[$field->field_name]->required) ? "<span class='required'>*</span> " : ""; ?> :</label>
+                        <label class="col-sm-2 col-form-label-sm text-right d-none d-md-block"><?php echo $input_fields[$field->field_name]->display_as; ?><?php echo ($input_fields[$field->field_name]->required) ? "<span class='required'>*</span> " : ""; ?> :</label>
 
                         <div class="col-sm-10">
                             <?php echo $input_fields[$field->field_name]->input ?>
@@ -45,8 +46,8 @@
 
             </div>
             <!-- /.box-body -->
-            <div class="box-footer">
-                <input type='button' value='<?php echo $this->l('form_save_and_go_back'); ?>' id="save-and-go-back-button"  class="btn btn-large btn-warning"/>                
+            <div class="card-footer">                
+                <input type='button' value='<?php echo $this->l('form_back_to_list'); ?>'     id="cancel-button"            class="btn btn-large btn-warning back-to-list"  />
                 <div class='small-loading' id='FormLoading'><?php echo $this->l('form_insert_loading'); ?></div>
             </div>
             <!-- /.box-footer -->

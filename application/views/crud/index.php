@@ -1,5 +1,3 @@
-<hr/><br>
- <?php
-        echo $output;
-   ?>
- <hr/>
+<?php
+  echo $output;
+?>
