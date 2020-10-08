@@ -1,46 +1,31 @@
 
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8 lt-ie7" lang="pt-br" dir="ltr"> <![endif]-->
-<!--[if IE 7]>         <html prefix="og: http://ogp.me/ns#" class="no-js lt-ie9 lt-ie8" lang="pt-br" dir="ltr"> <![endif]-->
-<!--[if IE 8]>         <html prefix="og: http://ogp.me/ns#" class="no-js lt-ie9" lang="pt-br" dir="ltr"> <![endif]-->
-<!--[if gt IE 8]><!--> <html prefix="og: http://ogp.me/ns#" class="no-js" lang="pt-br" dir="ltr"> <!--<![endif]-->
+<html prefix="og: http://ogp.me/ns#" class="no-js" lang="pt-br" dir="ltr"> 
     <head>
-        <!--[if lt IE 9]>
-        <script src="/templates/padraogoverno01/js/html5shiv.js"></script>
-        <![endif]-->
-
+        
         <link rel="stylesheet" href="<?= base_url("bootstrap/css/bootstrap_gov.min.css") ?>" type='text/css'/>
         <link rel="stylesheet" href="<?= base_url("bootstrap/css/template-verde.css") ?>" type='text/css'/>
 
 
         <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-        <!--[if lt IE 10]>
-        <link rel="stylesheet" href="/templates/padraogoverno01/css/ie.css" />
-        <![endif]-->
-        <!--[if lt IE 9]>
-        <link rel="stylesheet" href="/templates/padraogoverno01/css/ie8.css" />
-        <![endif]-->
-        <!--[if lt IE 8]>
-        <link rel="stylesheet" href="/templates/padraogoverno01/css/ie7.css" />
-        <link rel="stylesheet" href="/font-awesome/css/font-awesome-ie7.min.css" />
-        <![endif]-->    
-        <base href="https://portal.ifs.ifsuldeminas.edu.br/" />
+        
+        
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <link rel="sortcut icon" href="<?= base_url("bootstrap/img/logo.jpg")?>" type="image/jpg" />
         <title>Nutriif</title>
-        <link href="/templates/padraogoverno01/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-        <link href="https://portal.ifs.ifsuldeminas.edu.br/index.php/component/search/?Itemid=101&amp;format=opensearch" rel="search" title="Buscar IFSULDEMINAS - Campus Inconfidentes" type="application/opensearchdescription+xml" />
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
-        <link href="/components/com_k2/css/k2.css?v=2.8.0" rel="stylesheet" type="text/css" />
-        <link href="https://portal.ifs.ifsuldeminas.edu.br/templates/padraogoverno01/html/mod_banners/css/banner-rotativo-home.css" rel="stylesheet" type="text/css" />
+        
+        
+        
+        
+        <link href="<?= base_url("bootstrap/css/banner-rotativo-home.css")?>" rel="stylesheet" type="text/css" />
         <script type="application/json" class="joomla-script-options new">{"csrf.token":"5401241939fb354d1106eb27339ae6ce","system.paths":{"root":"","base":""}}</script>
         <script src="/media/jui/js/jquery.min.js?77f7d0b156fa3bb90e6529f9c17fe414" type="text/javascript"></script>
         <script src="/media/jui/js/jquery-noconflict.js?77f7d0b156fa3bb90e6529f9c17fe414" type="text/javascript"></script>
         <script src="/media/jui/js/jquery-migrate.min.js?77f7d0b156fa3bb90e6529f9c17fe414" type="text/javascript"></script>
         <script src="/media/k2/assets/js/k2.frontend.js?v=2.8.0&amp;sitepath=/" type="text/javascript"></script>
         <script src="/media/jui/js/bootstrap.min.js?77f7d0b156fa3bb90e6529f9c17fe414" type="text/javascript"></script>
-        <script src="https://portal.ifs.ifsuldeminas.edu.br/templates/padraogoverno01/html/mod_banners/js/banner-rotativo-home.js" type="text/javascript"></script>
-        <!-- Youtube Gallery Hot Video Switch -->
+        <script src="<?= base_url("bootstrap/css/banner-rotativo-home.js")?>" type="text/javascript"></script>
         <script type="text/javascript">
 
         </script>
@@ -49,6 +34,12 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <link rel="stylesheet" href="<?= base_url("bootstrap/css/fontes.css") ?>" type='text/css'/>
 
+        <style>
+            .logo{
+                width: 165px;
+                margin-bottom: 25px;
+            }
+        </style>
     </head>
     <body>
 
@@ -117,7 +108,7 @@
                         <div id="logo" class="span8 small">
                             <a href="<?= site_url("site/index") ?>" title="Campus Inconfidentes">
                                 <span class="portal-title-1">Site para conscientização do desperdício</span>
-                                <h1 class="portal-title corto">Nutriif</h1>
+                                <h1 class="portal-title corto">NUTRIIF</h1>
                                 <span class="portal-description">Ministério da Educação</span>
                             </a>
                         </div>
@@ -128,10 +119,10 @@
                                 <form action="/index.php" method="post" class="pull-right">
                                     <fieldset>
                                         <legend class="hide">Busca</legend>
-                                        <h2 class="hidden">Buscar no portal</h2>
+                                        <h2 class="hidden">Buscar no site</h2>
                                         <div class="input-append">
                                             <label for="portal-searchbox-field" class="hide">Busca: </label>
-                                            <input type="text" id="portal-searchbox-field" class="searchField" placeholder="Buscar no portal" title="Buscar no portal" name="searchword">       
+                                            <input type="text" id="portal-searchbox-field" class="searchField" placeholder="Buscar no site" title="Buscar no portal" name="searchword">       
                                             <button type="submit" class="btn searchButton"><span class="hide">Buscar</span><i class="icon-search"></i></button>
                                         </div>
                                         <input type="hidden" name="task" value="search" />
@@ -190,7 +181,7 @@
                                 <div class="bannergroupspan9 logo_menu_principal">
 
                                     <div class="banneritem">
-                                        <img src="<?= base_url("bootstrap/img/logo1.png") ?>" alt="Logo do nutriif">																
+                                        <img src="<?= base_url("bootstrap/img/logo.jpg") ?>" class="logo" alt="Logo do nutriif"/>																
                                         <div class="clr"></div>
                                     </div>
 
