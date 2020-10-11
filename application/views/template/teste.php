@@ -12,7 +12,7 @@
         
         
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <link rel="sortcut icon" href="<?= base_url("bootstrap/img/logo.jpg")?>" type="image/jpg" />
+        <link rel="sortcut icon" href="<?= base_url("bootstrap/img/logo_guia.png")?>" type="image/jpg" />
         <title>Nutriif</title>
         
         
