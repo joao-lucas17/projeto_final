@@ -19,7 +19,7 @@
 		<div class="login">
                      
                 <div class="card-header">
-                    <center><img src="<?= base_url("bootstrap/img/logo.jpg") ?>" class="logo-login"></center>
+                    <center><img src="<?= base_url("bootstrap/img/logo_login3.png") ?>" class="logo-login"></center>
 			</div>
                     
 			<div class="card-body">

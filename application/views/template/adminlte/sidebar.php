@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="<?= site_url() ?>" class="brand-link">
-      <img src="<?= base_url("public") ?>/dist/img/AdminLTELogo.png"
+      <img src="<?= base_url("bootstrap/img/logo.jpg")?>"
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
