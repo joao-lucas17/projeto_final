@@ -19,7 +19,7 @@ class Desperdicio extends CI_Controller{
         $crud->display_as("refeicao_idrefeicao", "Refeição");
         
         $form = $crud->render();
-        $this->template->load("template/template_restrito", "crud/index", $form);
+        $this->template->load("template/adminlte/admin", "crud/index", $form);
     }
     
    

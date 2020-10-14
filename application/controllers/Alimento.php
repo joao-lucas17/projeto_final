@@ -16,7 +16,7 @@ class Alimento extends CI_Controller{
         $crud->set_subject("alimento");
             
         $form = $crud->render();
-        $this->template->load("template/template_restrito", "crud/index", $form);
+        $this->template->load("template/adminlte/admin", "crud/index", $form);
     }
     
    

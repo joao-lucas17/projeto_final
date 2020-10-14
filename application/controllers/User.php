@@ -36,7 +36,7 @@ class User extends CI_Controller{
         //$crud->unset_delete();
         
         $form = $crud->render();
-        $this->template->load("template/template_restrito", "crud/index", $form);
+        $this->template->load("template/adminlte/admin", "crud/index", $form);
     }
     
     public function remove_confirma($post_array){

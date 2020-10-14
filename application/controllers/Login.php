@@ -26,7 +26,7 @@ class Login extends CI_Controller{
         if($query->num_rows() == 1){
             $usuario = $query->row();
             $this->session->set_userdata("usuario", $usuario->nome);
-            redirect("user");
+            redirect("user/index");
         }else{     
             $this->session->set_flashdata("danger", "CPF ou senha inválidos!");
             
