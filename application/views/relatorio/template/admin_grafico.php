@@ -66,6 +66,8 @@
                                     <span data-feather="calendar"></span>
                                     This week
                                 </button>
+                                
+                                
                             </div>
                         </div>
 
@@ -116,9 +118,10 @@
                 data: {
                     labels: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
                     datasets: [{
-                            data: [15339, 21345, 18483, 24003, 23489, 24092, 5000],
+                            label: "Desperdício alimentar",
+                            data: [50, 74, 150, 25, 200, 51, 8],
                             lineTension: 0,
-                            backgroundColor: 'transparent',
+                            backgroundColor: 'rgba(140,214,166,0.51)',
                             strokeColor : "rgba(220,220,220,1)",
                             borderColor: '#09801B',
                             borderWidth: 4,
@@ -135,7 +138,7 @@
                             }]
                     },
                     legend: {
-                        display: false,
+                        display: true,
                     }
                 }
             });
