@@ -20,8 +20,10 @@ class Relatorio extends CI_Controller {
         $this->load->view("relatorio/template/admin", $dados);
     }
     
-    public function grafico(){
-        $this->load->view("relatorio/template/admin_grafico");
+    public function grafico(){     
+        $this->load->model('relatorio_model');
+	$dias["dias"] = $this->relatorio_model->getDias();
+        $this->load->view("relatorio/template/admin_grafico", $dias);
     }
 
 }

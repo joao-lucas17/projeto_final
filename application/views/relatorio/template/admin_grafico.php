@@ -62,10 +62,17 @@
                                     <button class="btn btn-sm btn-outline-secondary">Share</button>
                                     <button class="btn btn-sm btn-outline-secondary">Export</button>
                                 </div>
-                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                                    <span data-feather="calendar"></span>
-                                    This week
-                                </button>
+                                
+                                <select name="campo_dias" class="browser-default custom-select custom-select-lg mb-3">
+				<?php
+                                
+					foreach ($dias as $d)
+                                            $data = explode("-", $d->dia);
+						echo "<option value='" . $d->idrefeicao . "'>" . "$data[2]/$data[1]/$data[0]" . "</option>";
+				?>
+                                    </select>
+                                    
+                                
                                 
                                 
                             </div>
