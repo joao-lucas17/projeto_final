@@ -14,6 +14,8 @@ class Refeicao extends CI_Controller{
         $crud = new Grocery_CRUD();
         $crud->set_table("refeicao");
         $crud->set_subject("refeicao");
+        $crud->display_as("observacao", 'Observação');
+        $crud->unset_texteditor("observacao");
             
         $crud->columns("dia", "tipo", "cardapio_idcardapio", "quantidade_pessoas", "observacao");
         $crud->set_relation("cardapio_idcardapio", "cardapio", "nome");

@@ -42,12 +42,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Blank Page</h1>
+                                <h1><?= isset($titulo) ? $titulo : "" ?></h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active">Blank Page</li>
+                                    <li class="breadcrumb-item"><a href="#"><?= isset($menu) ? $menu : "" ?></a></li>
+                                    <li class="breadcrumb-item active"><?= isset($submenu) ? $submenu : "" ?></li>
                                 </ol>
                             </div>           
                         </div>
@@ -77,7 +77,9 @@
         <script src="<?= base_url("public") ?>/dist/js/demo.js"></script>
 
         <!--  GroceryCRUD-->
-        <?php foreach ($js_files as $js): ?>
+        <?php 
+        if (isset($js_files))
+           foreach ($js_files as $js): ?>
             <script src='<?= $js ?>'></script>
         <?php endforeach; ?>
     </body>

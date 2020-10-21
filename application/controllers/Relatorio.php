@@ -6,6 +6,9 @@ class Relatorio extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        //$this->template->set("titulo", "Relatório de desperdicio");
+        $this->template->set("menu", "Relatório");
+        $this->template->set("submenu", "Desperdicio");
     }
 
     public function index() {
@@ -16,14 +19,13 @@ class Relatorio extends CI_Controller {
         $this->db->join("desperdicio", "refeicao.idrefeicao = desperdicio.refeicao_idrefeicao");
         $this->db->join("cardapio", "refeicao.cardapio_idcardapio = cardapio.idcardapio");
         $dados["dados"] = $this->db->get("refeicao")->result();
-        //$this->load->view("relatorio/template", $dados);
-        $this->load->view("relatorio/template/admin", $dados);
+        $this->template->load("template/adminlte/admin", "relatorio/desperdicio", $dados);
     }
     
     public function grafico(){     
         $this->load->model('relatorio_model');
 	$dias["dias"] = $this->relatorio_model->getDias();
-        $this->load->view("relatorio/template/admin_grafico", $dias);
+        $this->template->load("template/adminlte/admin", "relatorio/grafico", $dias);
     }
 
 }

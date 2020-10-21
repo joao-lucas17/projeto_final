@@ -30,7 +30,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
 
-                <li class="nav-header">LINKS DE NAVEGAÇÃO</li>
+                <li class="nav-header">CADASTROS</li>
                 <li class="nav-item">
                     <a href="<?= site_url("user/index") ?>" class="nav-link">
                         <img src="<?= base_url("bootstrap/img/usuario.png") ?>" class="img-icone"/>
@@ -61,6 +61,20 @@
                         <p>Desperdício</p>
                     </a>
                 </li>
+                <li class="nav-header">RELATÓRIOS</li>
+                <li class="nav-item">
+                     <a href="<?= site_url("relatorio/desperdicio") ?>" class="nav-link">
+                        <img src="<?= base_url("bootstrap/img/relatorio.png") ?>" class="img-icone"/>
+                        <p>Escrito</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= site_url("relatorio/grafico") ?>" class="nav-link">
+                        <img src="<?= base_url("bootstrap/img/grafico.png") ?>" class="img-icone"/>
+                        <p>Gráfico</p>
+                    </a>
+                </li>
+                <li class="nav-header">SISTEMA</li>
                 <li class="nav-item">
                     <a href="<?= site_url("login/sair") ?>" class="nav-link">
                         <img src="<?= base_url("bootstrap/img/sair.png") ?>" class="img-icone"/>
