@@ -21,12 +21,26 @@
                     <div class="col-md-3">
                         <select name="campo_dias" class="browser-default custom-select custom-select-lg mb-3">
                             <?php
-                                foreach ($dias as $d)
+                                foreach ($dias as $d){
                                     $data = explode("-", $d->dia);
                                 echo "<option value='" . $d->idrefeicao . "'>" . "$data[2]/$data[1]/$data[0]" . "</option>";
+                                }
                             ?>
                         </select>
+                        
                     </div>
+                    <div class="col-md-3">
+                        <select name="campo_dias" class="browser-default custom-select custom-select-lg mb-3">
+                            <?php
+                                foreach ($dias as $d){
+                                    $data = explode("-", $d->dia);
+                                echo "<option value='" . $d->idrefeicao . "'>" . "$data[2]/$data[1]/$data[0]" . "</option>";
+                                }
+                            ?>
+                        </select>
+                        
+                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -45,10 +59,10 @@
     var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+            labels: ["07/09/2020", "15/09/2020", "16/09/2020", "17/09/2020", "18/09/2020", "19/09/2020", "20/09/2020", "21/09/2020", "22/09/2020", "23/09/2020", "24/09/2020"],
             datasets: [{
                     label: "Desperdício alimentar",
-                    data: [50, 74, 150, 25, 200, 51, 8],
+                    data: [150, 200, 215, 156, 230, 231, 192, 187, 271, 199, 222],
                     lineTension: 0,
                     backgroundColor: 'rgba(140,214,166,0.51)',
                     strokeColor: "rgba(220,220,220,1)",
