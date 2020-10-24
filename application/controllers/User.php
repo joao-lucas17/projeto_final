@@ -7,7 +7,7 @@ class User extends CI_Controller{
         parent::__construct();
         $this->load->library("controle_acesso");
         $this->controle_acesso->controlar();
-        $this->template->set("menu", "Castrato");
+        $this->template->set("menu", "Cadastro");
         $this->template->set("submenu", "Usuário");
     }
     

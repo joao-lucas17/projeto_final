@@ -7,6 +7,8 @@ class Refeicao extends CI_Controller{
         parent::__construct();
         $this->load->library("controle_acesso");
         $this->controle_acesso->controlar();
+        $this->template->set("menu", "Cadastro");
+        $this->template->set("submenu", "Refeição");
     }
     
     public function index(){
