@@ -47,7 +47,7 @@
 
 
 
-<script type="text/javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?= base_url("bootstrap/js/jquery.dataTables.min.js") ?>"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#relatorio').DataTable();
