@@ -44,6 +44,7 @@
                 </div>
                 <div class="row">
                     <div class="col-12">
+                        <div class="my-4" id="piechart_3d" style="width: 700px; height: 400px;"></div>
                         <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
                     </div>
                 </div>                                                                  
@@ -54,7 +55,28 @@
 
 <!-- Graphs -->
 <script src="<?= base_url("bootstrap/js/Chart.min.js") ?>"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Segunda-feira', 'Hours per Day'],
+          ['Terça-feira',     11],
+          ['Quarta-feira',      2],
+          ['Quinta-feira',  2],
+          ['Sexta-feira', 2],
+          ['Sábado',    7]
+        ]);
+        var options = {
+          title: 'Desperdício nessa semana',
+          is3D: true,
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+        chart.draw(data, options);
+      }
+</script>
+<script> 
     var ctx = document.getElementById("myChart");
     var myChart = new Chart(ctx, {
         type: 'line',
