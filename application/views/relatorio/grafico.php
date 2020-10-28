@@ -43,10 +43,20 @@
                     
                 </div>
                 <div class="row">
-                    <div class="col-12">
-                        <div class="my-4" id="piechart_3d" style="width: 700px; height: 400px;"></div>
+                    <div class="col-sm-6">
+                        <h5><center>Valor gasto com a comida desperdiçada</center></h5>
+                        <canvas class="my-4" id="barra" width="900" height="480"></canvas>
+                    </div>
+                    <div class="col-sm-6">
+                        <h5><center>Desperdício na semana passada</center></h5>
+                        <div class="my-1" id="piechart_3d" style="width: 100%; height: 100%; display: block;"></div>
+                        
+                    </div>
+                    <div class="col-lg-12">
+                        
                         <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
                     </div>
+                    
                 </div>                                                                  
             </div>
         </div>
@@ -61,15 +71,17 @@
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Segunda-feira', 'Hours per Day'],
-          ['Terça-feira',     11],
-          ['Quarta-feira',      2],
-          ['Quinta-feira',  2],
-          ['Sexta-feira', 2],
-          ['Sábado',    7]
+          ['Exemplo', 'Hours per Day'],
+          ['Segunda-feira',     150],
+          ['Terça-feira',     200],
+          ['Quarta-feira',      215],
+          ['Quinta-feira',  156],
+          ['Sexta-feira', 230],
+          ['Sábado',    231],
+          ['Domingo',    192]
         ]);
         var options = {
-          title: 'Desperdício nessa semana',
+          title: '',
           is3D: true,
         };
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -103,6 +115,37 @@
             },
             legend: {
                 display: true,
+            }
+        }
+    });
+</script>
+<script> 
+    var ctx = document.getElementById("barra");
+    var barra = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+            datasets: [{
+                    label: "Valor gasto com a comida desperdiçada",
+                    data: [150, 200, 215, 156, 230, 231, 192],
+                    lineTension: 0,
+                    backgroundColor: ["#D43030", "#3D77B9", "#C72EA0", "#FFAB02", "#11136A", "#459D31", "#6B4A07"],
+                    strokeColor: "rgba(220,220,220,1)",
+                    borderColor: 'transparent',
+                    borderWidth: 4,
+                    pointBackgroundColor: '#09801B'
+                }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+            },
+            legend: {
+                display: false,
             }
         }
     });
