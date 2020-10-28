@@ -44,7 +44,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        <h5><center>Valor gasto com a comida desperdiçada</center></h5>
+                        <h5><center>Valor gasto com a comida desperdiçada semana passada</center></h5><br>
                         <canvas class="my-4" id="barra" width="900" height="480"></canvas>
                     </div>
                     <div class="col-sm-6">
@@ -53,7 +53,7 @@
                         
                     </div>
                     <div class="col-lg-12">
-                        
+                        <h5><center>Desperdício alimentar por peso</center></h5>
                         <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
                     </div>
                     
@@ -81,7 +81,6 @@
           ['Domingo',    192]
         ]);
         var options = {
-          title: '',
           is3D: true,
         };
         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -129,7 +128,7 @@
                     label: "Valor gasto com a comida desperdiçada",
                     data: [150, 200, 215, 156, 230, 231, 192],
                     lineTension: 0,
-                    backgroundColor: ["#D43030", "#3D77B9", "#C72EA0", "#FFAB02", "#11136A", "#459D31", "#6B4A07"],
+                    backgroundColor: ["#dd4477", "#dd4477", "#dd4477", "#dd4477", "#dd4477", "#dd4477", "#dd4477"],
                     strokeColor: "rgba(220,220,220,1)",
                     borderColor: 'transparent',
                     borderWidth: 4,
