@@ -128,7 +128,7 @@
                     label: "Valor gasto com a comida desperdiçada",
                     data: [150, 200, 215, 156, 230, 231, 192],
                     lineTension: 0,
-                    backgroundColor: ["#dd4477", "#dd4477", "#dd4477", "#dd4477", "#dd4477", "#dd4477", "#dd4477"],
+                    backgroundColor: ["purple", "purple", "purple", "purple", "purple", "purple", "purple"],
                     strokeColor: "rgba(220,220,220,1)",
                     borderColor: 'transparent',
                     borderWidth: 4,
