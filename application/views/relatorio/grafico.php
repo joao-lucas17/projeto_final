@@ -43,18 +43,90 @@
                     
                 </div>
                 <div class="row">
-                    <div class="col-sm-6">
-                        <h5><center>Valor gasto com a comida desperdiçada semana passada</center></h5><br>
-                        <canvas class="my-4" id="barra" width="900" height="480"></canvas>
+                    <div class="col-sm-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada semana passada</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
                     </div>
-                    <div class="col-sm-6">
-                        <h5><center>Desperdício na semana passada</center></h5>
-                        <div class="my-1" id="piechart_3d" style="width: 100%; height: 100%; display: block;"></div>
-                        
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                    <canvas id="barra" style="display: block; width: 213px; height: 120px;" width="173" height="106" class="chartjs-render-monitor"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+                    
+                   <div class="col-sm-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-info">Desperdício na semana passada</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    
+                  <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                    <canvas id="pie" style="display: block; width: 273px; height: 220px;" width="273" height="220" class="chartjs-render-monitor"></canvas>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+                   
+                    
                     <div class="col-lg-12">
-                        <h5><center>Desperdício alimentar por peso</center></h5>
-                        <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
+                        <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-info">Desperdício alimentar por peso</h6>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Dropdown Header:</div>
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    
+                  <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                    <canvas id="myChart" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
+                  </div>
+                  
+                </div>
+              </div>
                     </div>
                     
                 </div>                                                                  
@@ -65,27 +137,27 @@
 
 <!-- Graphs -->
 <script src="<?= base_url("bootstrap/js/Chart.min.js") ?>"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script>
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Exemplo', 'Hours per Day'],
-          ['Segunda-feira',     150],
-          ['Terça-feira',     200],
-          ['Quarta-feira',      215],
-          ['Quinta-feira',  156],
-          ['Sexta-feira', 230],
-          ['Sábado',    231],
-          ['Domingo',    192]
-        ]);
-        var options = {
-          is3D: true,
-        };
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-      }
+
+<script> 
+    var ctx = document.getElementById("pie");
+    var pie = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
+            datasets: [{
+                    label: "Desperdício alimentar",
+                    data: [150, 200, 215, 156, 230, 231, 192],
+                    lineTension: 0,
+                    backgroundColor: ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477"],
+                    strokeColor: "rgba(220,220,220,1)",
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#09801B'
+                }]
+        },
+           
+        
+    });
 </script>
 <script> 
     var ctx = document.getElementById("myChart");
