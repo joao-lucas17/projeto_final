@@ -47,17 +47,18 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <div class="col-11">
                   <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada semana passada</h6>
-                  <div class="dropdown no-arrow">
+                    </div>
+                  <div class="col-2">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-header">Fazer Download:</div>
+                      <a class="dropdown-item" href="#">PNG</a>
+                      <a class="dropdown-item" href="#">JPEG</a>
+                      <a class="dropdown-item" href="#">GIF</a>
                     </div>
                   </div>
                 </div>
@@ -74,17 +75,18 @@
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <div class="col-11">
                   <h6 class="m-0 font-weight-bold text-info">Desperdício na semana passada</h6>
+                    </div>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-header">Fazer Download:</div>
+                      <a class="dropdown-item" href="#">PNG</a>
+                      <a class="dropdown-item" href="#">JPEG</a>
+                      <a class="dropdown-item" href="#">GIF</a>
                     </div>
                   </div>
                 </div>
@@ -104,17 +106,18 @@
                         <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <div class="col-11">
                   <h6 class="m-0 font-weight-bold text-info">Desperdício alimentar por peso</h6>
+                    </div>
                   <div class="dropdown no-arrow">
                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                      <div class="dropdown-header">Dropdown Header:</div>
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
+                      <div class="dropdown-header">Formas de Download:</div>
+                      <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/jpg.png") ?>"/>PNG</a>
+                      <a class="dropdown-item" href="#">JPG</a>
+                      <a class="dropdown-item" href="#">GIF</a>
                     </div>
                   </div>
                 </div>
