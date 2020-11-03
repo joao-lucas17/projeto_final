@@ -170,12 +170,12 @@
             datasets: [{
                     label: "Desperdício alimentar",
                     data: [150, 200, 215, 156, 230, 231, 192, 187, 271, 199, 222],
-                    lineTension: 0,
-                    backgroundColor: 'rgba(140,214,166,0.51)',
-                    strokeColor: "rgba(220,220,220,1)",
-                    borderColor: '#09801B',
+                    lineTension: 0.3,
+                    backgroundColor: 'rgba(0,153,198,0.31)',
+                    strokeColor: "rgba(0,153,198,0.31)",
+                    borderColor: '#3366cc',
                     borderWidth: 4,
-                    pointBackgroundColor: '#09801B'
+                    pointBackgroundColor: '#3366cc'
                 }]
         },
         options: {
@@ -223,3 +223,4 @@
         }
     });
 </script>
+
