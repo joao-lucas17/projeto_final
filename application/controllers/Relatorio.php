@@ -24,10 +24,10 @@ class Relatorio extends CI_Controller {
     }
     
     public function grafico(){     
-        $resultado = $this->relatorio_model->getDesperdicioByDate('2020-09-18','2020-09-22');
+        $resultado = $this->relatorio_model->getDesperdicioByDate('2020-09-16','2020-09-22');
         $dados1 = $this->_getDataGrafico1($resultado, 'labels_bar1', 'data_bar1');        
         
-        $resultado2 = $this->relatorio_model->getDesperdicioValor('2020-09-18','2020-09-22');
+        $resultado2 = $this->relatorio_model->getDesperdicioValor('2020-09-16','2020-09-22');
         $dados2 = $this->_getDataGrafico1($resultado2, 'labels_bar2', 'data_bar2');        
 //        
 	$dias["dias"] = $this->relatorio_model->getDias();   

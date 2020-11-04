@@ -63,7 +63,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="<?= site_url("configuracoes/index") ?>" class="nav-link">
-                        <img src="<?= base_url("bootstrap/img/desperdicio.png") ?>" class="img-icone"/>
+                        <img src="<?= base_url("bootstrap/img/config.png") ?>" class="img-icone"/>
                         <p>Configurações</p>
                     </a>
                 </li>

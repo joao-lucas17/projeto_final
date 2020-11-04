@@ -14,7 +14,7 @@ function gerar_grafico_barra(idElemento, labels, data, label) {
                     label: label,
                     data: data,
                     lineTension: 0,
-                    backgroundColor: ["purple", "purple", "purple", "purple", "purple", "purple", "purple"],
+                    backgroundColor: "purple",
                     strokeColor: "rgba(220,220,220,1)",
                     borderColor: 'transparent',
                     borderWidth: 4,
