@@ -1,6 +1,5 @@
 <?php
 
-
 class Refeicao extends CI_Controller{
     
     function __construct() {
@@ -24,7 +23,5 @@ class Refeicao extends CI_Controller{
         $form = $crud->render();
         $this->template->load("template/adminlte/admin", "crud/index", $form);
     }
-    
-   
-    
+        
 }
