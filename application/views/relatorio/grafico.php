@@ -17,33 +17,40 @@
 
 
             <div class="card-body p-2" >  
-                <div class='row'>
-                    <div class="col-md-3">
-                        <select name="campo_dias" class="browser-default custom-select custom-select-lg mb-3">
-                            <?php
-                            foreach ($dias as $d) {
-                                $data = explode("-", $d->dia);
-                                echo "<option value='" . $d->idrefeicao . "'>" . "$data[2]/$data[1]/$data[0]" . "</option>";
-                            }
-                            ?>
-                        </select>
+                
+                    <form class="form-inline">
+                        <div class="form-group mb-2 col-md-4">
+                            <label for="select_data_inicial" class="">Data Inicial: </label>
+                            <select name="campo_dias" class="custom-select ml-2 col-8" id="select_data_inicial">
+                                <?php
+                                foreach ($dias as $d) {
+                                    $data = explode("-", $d->dia);
+                                    echo "<option value='" . $d->idrefeicao . "'>" . "$data[2]/$data[1]/$data[0]" . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group mb-2 col-md-4">
+                            <label for="select_data_inicial">Data Final: </label>
+                            <select name="campo_dias" class="custom-select ml-2 col-8">
+                                <?php
+                                foreach ($dias as $d) {
+                                    $data = explode("-", $d->dia);
+                                    echo "<option value='" . $d->idrefeicao . "'>" . "$data[2]/$data[1]/$data[0]" . "</option>";
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </form>
 
-                    </div>
-                    <div class="col-md-3">
-                        <select name="campo_dias" class="browser-default custom-select custom-select-lg mb-3">
-                            <?php
-                            foreach ($dias as $d) {
-                                $data = explode("-", $d->dia);
-                                echo "<option value='" . $d->idrefeicao . "'>" . "$data[2]/$data[1]/$data[0]" . "</option>";
-                            }
-                            ?>
-                        </select>
-
-                    </div>
-
-                </div>
+               
+                
+                
+<!--                ínicio dos gráficos -->
                 <div class="row">
-                    <div class="col-sm-7">
+                    
+<!--                    gráfico de barras-->
+                    <div class="col-sm-6">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -71,14 +78,15 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-5">
+<!--                    gráfico de pizza-->
+                    <div class="col-sm-6">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <div class="col-11">
-                                    <h6 class="m-0 font-weight-bold text-info">Desperdício na semana passada</h6>
+                                    <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada semana passada</h6>
                                 </div>
-                                <div class="dropdown no-arrow">
+                                <div class="col-2">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
                                     </a>
@@ -92,22 +100,21 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-
-                                <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="pie" style="display: block; width: 273px; height: 220px;" width="273" height="220" class="chartjs-render-monitor"></canvas>
+                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="pizza" style="display: block; width: 213px; height: 120px;" width="173" height="106" class="chartjs-render-monitor"></canvas>
                                 </div>
-
                             </div>
                         </div>
                     </div>
 
 
+<!--                    gráfico de área - linhas-->
                     <div class="col-lg-12">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <div class="col-11">
-                                    <h6 class="m-0 font-weight-bold text-info">Desperdício alimentar por peso</h6>
+                                    <h6 class="m-0 font-weight-bold text-info">Desperdício alimentar por peso em quilos</h6>
                                 </div>
                                 <div class="dropdown no-arrow">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -132,7 +139,8 @@
                         </div>
                     </div>
 
-                </div>                                                                  
+                </div> 
+<!--final dos gráficos-->
             </div>
         </div>
     </div>
@@ -141,86 +149,19 @@
 <!-- Graphs -->
 <script src="<?= base_url("bootstrap/js/Chart.min.js") ?>"></script>
 
-<script>
-    var ctx = document.getElementById("pie");
-    var pie = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
-            datasets: [{
-                    label: "Desperdício alimentar",
-                    data: [150, 200, 215, 156, 230, 231, 192],
-                    lineTension: 0,
-                    backgroundColor: ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477"],
-                    strokeColor: "rgba(220,220,220,1)",
-                    borderColor: 'white',
-                    borderWidth: 2,
-                    pointBackgroundColor: '#09801B'
-                }]
-        },
 
-    });
-</script>
+<script src="<?= base_url("public/dist/js/config_graph_bar.js") ?>"> </script>
 <script>
-    var ctx = document.getElementById("myChart");
-    var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: ["07/09/2020", "15/09/2020", "16/09/2020", "17/09/2020", "18/09/2020", "19/09/2020", "20/09/2020", "21/09/2020", "22/09/2020", "23/09/2020", "24/09/2020"],
-            datasets: [{
-                    label: "Desperdício alimentar",
-                    data: [150, 200, 215, 156, 230, 231, 192, 187, 271, 199, 222],
-                    lineTension: 0.3,
-                    backgroundColor: 'rgba(0,153,198,0.31)',
-                    strokeColor: "rgba(0,153,198,0.31)",
-                    borderColor: '#3366cc',
-                    borderWidth: 4,
-                    pointBackgroundColor: '#3366cc'
-                }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-            },
-            legend: {
-                display: true,
-            }
-        }
-    });
+    var labels_grafico1 = <?= $labels_bar1 ?> ;
+    var dados_grafico1 = <?= $data_bar1 ?> ;
+    
+     var labels_grafico2 = <?= $labels_bar2 ?> ;
+    var dados_grafico2 = <?= $data_bar2 ?> ;
+    
+    
+    var barra = gerar_grafico_barra("barra", labels_grafico2, dados_grafico2, "Desperdicio em reais " );        
+    var pizza = gerar_grafico_pizza("pizza", labels_grafico1, dados_grafico1 );                
+    var linha = gerar_grafico_linha("myChart", labels_grafico1, dados_grafico1 );                
 </script>
-<script>
-    var ctx = document.getElementById("barra");
-    var barra = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"],
-            datasets: [{
-                    label: "Valor gasto com a comida desperdiçada",
-                    data: [150, 200, 215, 156, 230, 231, 192],
-                    lineTension: 0,
-                    backgroundColor: ["purple", "purple", "purple", "purple", "purple", "purple", "purple"],
-                    strokeColor: "rgba(220,220,220,1)",
-                    borderColor: 'transparent',
-                    borderWidth: 4,
-                    pointBackgroundColor: '#09801B'
-                }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-            },
-            legend: {
-                display: false,
-            }
-        }
-    });
-</script>
+
 

@@ -61,6 +61,12 @@
                         <p>Desperdício</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="<?= site_url("configuracoes/index") ?>" class="nav-link">
+                        <img src="<?= base_url("bootstrap/img/desperdicio.png") ?>" class="img-icone"/>
+                        <p>Configurações</p>
+                    </a>
+                </li>
                 <li class="nav-header">RELATÓRIOS</li>
                 <li class="nav-item">
                      <a href="<?= site_url("relatorio/desperdicio") ?>" class="nav-link">
