@@ -27,5 +27,8 @@ class Relatorio extends CI_Controller {
 	$dias["dias"] = $this->relatorio_model->getDias();
         $this->template->load("template/adminlte/admin", "relatorio/grafico", $dias);
     }
+    
+    
+    
 
 }

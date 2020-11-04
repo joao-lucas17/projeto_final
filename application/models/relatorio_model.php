@@ -11,4 +11,9 @@ class relatorio_model extends CI_Model{
 		$query = $this->db->select("idrefeicao, dia")->from("refeicao")->get();
 		return $query->result();
 	}
+        
+    public function getDiasPeso()
+	{
+		return json_encode($this->db->get("refeicao")->result_array());
+	}
 }
