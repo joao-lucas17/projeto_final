@@ -353,7 +353,8 @@
                                             <div class="faixa"></div>
                                             <h1>
                                                 <a href="/index.php/component/banners/click/24">
-                                                    Bem-vindo ao Campus Inconfidentes				</a>
+                                                    Bem-vindo ao Campus Inconfidentes
+                                                </a>
                                             </h1>
                                             <div class="clr"></div>
                                         </div>
