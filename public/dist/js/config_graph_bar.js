@@ -4,7 +4,7 @@
 
 
 
-function gerar_grafico_barra(idElemento, labels, data, label) {
+function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
     var barra = new Chart(ctx, {
         type: 'bar',
@@ -50,22 +50,35 @@ function gerar_grafico_barra(idElemento, labels, data, label) {
     return barra;
 }
 
-function gerar_grafico_pizza(idElemento, labels, data) {
+function gerar_grafico_barra_horizontal(idElemento, labels, data) {
     var ctx = document.getElementById(idElemento);
     var barra = new Chart(ctx, {
-        type: 'doughnut',
+        type: 'horizontalBar',
         data: {
             labels: labels,
             datasets: [{
-                    label: "Quantidade de comida desperdiçada",
+                    label: null,
                     data: data,
                     lineTension: 0,
-                    backgroundColor: ["#3366cc", "#dc3912", "#ff9900", "#109618", "#990099", "#0099c6", "#dd4477"],
+                    backgroundColor: "#dd4477",
                     strokeColor: "rgba(220,220,220,1)",
                     borderColor: 'white',
                     borderWidth: 2,
                     pointBackgroundColor: '#09801B'
                 }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            
+                        }
+                    }]
+            },
+            legend: {
+                display: false,
+            },
         }
     });
     return barra;

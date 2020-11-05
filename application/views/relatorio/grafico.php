@@ -84,7 +84,7 @@
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <div class="col-11">
-                                    <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada semana passada</h6>
+                                    <h6 class="m-0 font-weight-bold text-info">Porcentagem de desperdício por dia</h6>
                                 </div>
                                 <div class="col-2">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -159,8 +159,8 @@
     var dados_grafico2 = <?= $data_bar2 ?> ;
     
     
-    var barra = gerar_grafico_barra("barra", labels_grafico2, dados_grafico2, "Desperdicio em reais " );        
-    var pizza = gerar_grafico_pizza("pizza", labels_grafico1, dados_grafico1 );                
+    var barra = gerar_grafico_barra_vertical("barra", labels_grafico2, dados_grafico2, "Desperdicio em reais " );        
+    var pizza = gerar_grafico_barra_horizontal("pizza", labels_grafico1, dados_grafico1 );                
     var linha = gerar_grafico_linha("myChart", labels_grafico1, dados_grafico1 );                
 </script>
 
