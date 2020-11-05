@@ -50,14 +50,14 @@ function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
     return barra;
 }
 
-function gerar_grafico_barra_horizontal(idElemento, labels, data) {
+function gerar_grafico_barra_horizontal(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
     var barra = new Chart(ctx, {
         type: 'horizontalBar',
         data: {
             labels: labels,
             datasets: [{
-                    label: null,
+                    label: label,
                     data: data,
                     lineTension: 0,
                     backgroundColor: "#dd4477",

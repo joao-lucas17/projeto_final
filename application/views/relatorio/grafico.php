@@ -160,7 +160,7 @@
     
     
     var barra = gerar_grafico_barra_vertical("barra", labels_grafico2, dados_grafico2, "Desperdicio em reais " );        
-    var pizza = gerar_grafico_barra_horizontal("pizza", labels_grafico1, dados_grafico1 );                
+    var pizza = gerar_grafico_barra_horizontal("pizza", labels_grafico1, dados_grafico1, "Porcentagem de desperdício " );                
     var linha = gerar_grafico_linha("myChart", labels_grafico1, dados_grafico1 );                
 </script>
 
