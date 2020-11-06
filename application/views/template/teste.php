@@ -35,71 +35,70 @@
     <script src="/media/jui/js/bootstrap.min.js?77f7d0b156fa3bb90e6529f9c17fe414" type="text/javascript"></script>
     <script src="https://portal.ifs.ifsuldeminas.edu.br/templates/padraogoverno01/html/mod_banners/js/banner-rotativo-home.js" type="text/javascript"></script>
     <!-- Youtube Gallery Hot Video Switch -->
-    <script type="text/javascript">
-        //<![CDATA[
-                var YoutubeGalleryVideoSources1 = ["youtube"];
-        var YoutubeGalleryPlayer1 = new Array;
-        YoutubeGalleryPlayer1[0] = '<!-- youtube player --><div id="YoutubeGallerySecondaryContainer1">***code_begin***<div onclick="ygimagehot1=document.getElementById(*quote*ygvideoplayerhot1*quote*);ygimagehot1.style.display=*quote*block*quote*;this.style.display=*quote*none*quote*" style="position:relative;width:430px;height:245px;padding:0;"><img src="/****youtubegallery-video-customimage****" style="cursor:pointer;width:430px;height:245px;padding:0;" /><div style="position:absolute;width:100px;height:100px;left:165px;top:72px;"><img src="/components/com_youtubegallery/images/play.png" style="border:none!important;cursor:pointer;width:100px;height:100px;padding:0;" /></div></div><div id="ygvideoplayerhot1" style="display:none">***code_end***<iframe width="430" height="245" src="https://www.youtube.com/embed/****youtubegallery-video-id****?autoplay=0&amp;hl=en&amp;fs=1&amp;showinfo=1&amp;iv_load_policy=3&amp;rel=0&amp;loop=0&amp;border=1&amp;controls=1&amp;start=****youtubegallery-video-startsecond****&amp;end=****youtubegallery-video-endsecond****" frameborder="1" id="youtubegalleryplayerid_1" onLoad="YoutubeGalleryAutoResizePlayer1();" allowfullscreen></iframe>***code_begin***</div>***code_end***</div>';
-            for (var i = 0; i < YoutubeGalleryPlayer1.length; i++)
-                    {
-                    var player_code = YoutubeGalleryPlayer1[i];
-                    player_code = player_code.replace(/\*quote\*/g, '\'');
-                    YoutubeGalleryPlayer1[i] = player_code;
-                    }
+                <script type="text/javascript">
+    //<![CDATA[
+var YoutubeGalleryVideoSources1 = ["youtube"];
+var YoutubeGalleryPlayer1 = new Array;
+YoutubeGalleryPlayer1[0] = '<!-- youtube player --><div id="YoutubeGallerySecondaryContainer1">***code_begin***<div onclick="ygimagehot1=document.getElementById(*quote*ygvideoplayerhot1*quote*);ygimagehot1.style.display=*quote*block*quote*;this.style.display=*quote*none*quote*" style="position:relative;width:430px;height:245px;padding:0;"><img src="/****youtubegallery-video-customimage****" style="cursor:pointer;width:430px;height:245px;padding:0;" /><div style="position:absolute;width:100px;height:100px;left:165px;top:72px;"><img src="/components/com_youtubegallery/images/play.png" style="border:none!important;cursor:pointer;width:100px;height:100px;padding:0;" /></div></div><div id="ygvideoplayerhot1" style="display:none">***code_end***<iframe width="430" height="245" src="https://www.youtube.com/embed/****youtubegallery-video-id****?autoplay=0&amp;hl=en&amp;fs=1&amp;showinfo=1&amp;iv_load_policy=3&amp;rel=0&amp;loop=0&amp;border=1&amp;controls=1&amp;start=****youtubegallery-video-startsecond****&amp;end=****youtubegallery-video-endsecond****" frameborder="1" id="youtubegalleryplayerid_1" onLoad="YoutubeGalleryAutoResizePlayer1();" allowfullscreen></iframe>***code_begin***</div>***code_end***</div>';
+for (var i = 0; i < YoutubeGalleryPlayer1.length; i++)
+{
+var player_code = YoutubeGalleryPlayer1[i];
+player_code = player_code.replace(/\*quote\*/g, '\'');
+YoutubeGalleryPlayer1[i] = player_code;
+}
 
-            function YoutubeGalleryCleanCode1(playercode)
-                    {
-                    do{
-                    var b = playercode.indexOf("***code_begin***");
-                    var e = playercode.indexOf("***code_end***");
-                    if (b != - 1 && e != - 1)
-                            playercode = playercode.substr(0, b) + playercode.substr(e + 14);
-                    }while (b != - 1 && e != - 1)
-                            return playercode;
-                    }
+function YoutubeGalleryCleanCode1(playercode)
+{
+do{
+var b = playercode.indexOf("***code_begin***");
+var e = playercode.indexOf("***code_end***");
+if (b != - 1 && e != - 1)
+        playercode = playercode.substr(0, b) + playercode.substr(e + 14);
+}while (b != - 1 && e != - 1)
+        return playercode;
+}
 
-            function YoutubeGalleryHotVideoSwitch1(videoid, videosource, id)
-                    {
-                    var i = YoutubeGalleryVideoSources1.indexOf(videosource);
-                    if (i == - 1)
-                            playercode = "";
-                    else
-                            playercode = YoutubeGalleryPlayer1[i];
-                    playercode = playercode.replace("****youtubegallery-video-id****", videoid);
-                    var title = document.getElementById("YoutubeGalleryThumbTitle1_" + id).innerHTML
-                            var description = document.getElementById("YoutubeGalleryThumbDescription1_" + id).innerHTML
-                            var link = document.getElementById("YoutubeGalleryThumbLink1_" + id).innerHTML
-                            var startsecond = document.getElementById("YoutubeGalleryThumbStartSecond1_" + id).innerHTML
-                            var endsecond = document.getElementById("YoutubeGalleryThumbEndSecond1_" + id).innerHTML
-                            var customimage_obj = document.getElementById("YoutubeGalleryThumbCustomImage1_" + id);
-                    if (customimage_obj)
-                            {
-                            var customimage = customimage_obj.innerHTML;
-                            var n = customimage.indexOf("_small");
-                            if (n == - 1)
-                                    {
-                                    playercode = playercode.replace("****youtubegallery-video-customimage****", customimage);
-                                    for (i = 0; i < 2; i++)
-                                            {
-                                            playercode = playercode.replace("***code_begin***", "");
-                                            playercode = playercode.replace("***code_end***", "");
-                                            }
-                                    }
-                            else
-                                    playercode = YoutubeGalleryCleanCode1(playercode);
-                            }
-                    else
-                            playercode = YoutubeGalleryCleanCode1(playercode);
-                    playercode = playercode.replace("****youtubegallery-video-link****", link);
-                    playercode = playercode.replace("****youtubegallery-video-startsecond****", startsecond);
-                    playercode = playercode.replace("****youtubegallery-video-endsecond****", endsecond);
-                    playercode = playercode.replace("autoplay = 0","autoplay = 1");
+function YoutubeGalleryHotVideoSwitch1(videoid, videosource, id)
+{
+var i = YoutubeGalleryVideoSources1.indexOf(videosource);
+if (i == - 1)
+        playercode = "";
+else
+        playercode = YoutubeGalleryPlayer1[i];
+playercode = playercode.replace("****youtubegallery-video-id****", videoid);
+var title = document.getElementById("YoutubeGalleryThumbTitle1_" + id).innerHTML
+        var description = document.getElementById("YoutubeGalleryThumbDescription1_" + id).innerHTML
+        var link = document.getElementById("YoutubeGalleryThumbLink1_" + id).innerHTML
+        var startsecond = document.getElementById("YoutubeGalleryThumbStartSecond1_" + id).innerHTML
+        var endsecond = document.getElementById("YoutubeGalleryThumbEndSecond1_" + id).innerHTML
+        var customimage_obj = document.getElementById("YoutubeGalleryThumbCustomImage1_" + id);
+if (customimage_obj)
+{
+var customimage = customimage_obj.innerHTML;
+var n = customimage.indexOf("_small");
+if (n == - 1)
+{
+playercode = playercode.replace("****youtubegallery-video-customimage****", customimage);
+for (i = 0; i < 2; i++)
+{
+playercode = playercode.replace("***code_begin***", "");
+playercode = playercode.replace("***code_end***", "");
+}
+}
+else
+        playercode = YoutubeGalleryCleanCode1(playercode);
+}
+else
+        playercode = YoutubeGalleryCleanCode1(playercode);
+playercode = playercode.replace("****youtubegallery-video-link****", link);
+playercode = playercode.replace("****youtubegallery-video-startsecond****", startsecond);
+playercode = playercode.replace("****youtubegallery-video-endsecond****", endsecond);
+playercode = playercode.replace("autoplay = 0","autoplay = 1");
 
-                            document.getElementById("YoutubeGallerySecondaryContainer1").innerHTML = playercode;
-                    if (playercode.indexOf("<!--DYNAMIC PLAYER-->") != - 1)
-                            eval("youtubegallery_updateplayer_" + videosource + "_1(videoid,true)");
-                    var tObj = document.getElementById("YoutubeGalleryVideoTitle1");
-                    var dObj = document.getElementById("YoutubeGalleryVideoDescription1");
+        document.getElementById("YoutubeGallerySecondaryContainer1").innerHTML = playercode;
+if (playercode.indexOf("<!--DYNAMIC PLAYER-->") != - 1)
+        eval("youtubegallery_updateplayer_" + videosource + "_1(videoid,true)");
+var tObj = document.getElementById("YoutubeGalleryVideoTitle1");                var dObj = document.getElementById("YoutubeGalleryVideoDescription1");
 if (tObj)
 {
 tObj.innerHTML = title;
@@ -107,7 +106,7 @@ tObj.innerHTML = title;
 		
 if(dObj)
 {
-    dObj.innerHTML=description;
+dObj.innerHTML=description;
 }
 		
 }
@@ -117,6 +116,357 @@ if(dObj)
         .logo{
             width: 165px;
             margin-bottom: 25px;
+        }
+        .card-body {
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1.25rem;
+        }
+        .p-2 {
+            padding: 0.5rem !important;
+        }
+        .table {
+            width: 100%;
+            margin-bottom: 1rem;
+            color: #212529;
+        }
+
+        .table th,
+        .table td {
+            padding: 0.75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .table thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        .table tbody + tbody {
+            border-top: 2px solid #dee2e6;
+        }
+
+        .table-sm th,
+        .table-sm td {
+            padding: 0.3rem;
+        }
+
+        .table-bordered {
+            border: 1px solid #dee2e6;
+        }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #dee2e6;
+        }
+
+        .table-bordered thead th,
+        .table-bordered thead td {
+            border-bottom-width: 2px;
+        }
+
+        .table-borderless th,
+        .table-borderless td,
+        .table-borderless thead th,
+        .table-borderless tbody + tbody {
+            border: 0;
+        }
+
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .table-hover tbody tr:hover {
+            color: #212529;
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table-primary,
+        .table-primary > th,
+        .table-primary > td {
+            background-color: #b8daff;
+        }
+
+        .table-primary th,
+        .table-primary td,
+        .table-primary thead th,
+        .table-primary tbody + tbody {
+            border-color: #7abaff;
+        }
+
+        .table-hover .table-primary:hover {
+            background-color: #9fcdff;
+        }
+
+        .table-hover .table-primary:hover > td,
+        .table-hover .table-primary:hover > th {
+            background-color: #9fcdff;
+        }
+
+        .table-secondary,
+        .table-secondary > th,
+        .table-secondary > td {
+            background-color: #d6d8db;
+        }
+
+        .table-secondary th,
+        .table-secondary td,
+        .table-secondary thead th,
+        .table-secondary tbody + tbody {
+            border-color: #b3b7bb;
+        }
+
+        .table-hover .table-secondary:hover {
+            background-color: #c8cbcf;
+        }
+
+        .table-hover .table-secondary:hover > td,
+        .table-hover .table-secondary:hover > th {
+            background-color: #c8cbcf;
+        }
+
+        .table-success,
+        .table-success > th,
+        .table-success > td {
+            background-color: #c3e6cb;
+        }
+
+        .table-success th,
+        .table-success td,
+        .table-success thead th,
+        .table-success tbody + tbody {
+            border-color: #8fd19e;
+        }
+
+        .table-hover .table-success:hover {
+            background-color: #b1dfbb;
+        }
+
+        .table-hover .table-success:hover > td,
+        .table-hover .table-success:hover > th {
+            background-color: #b1dfbb;
+        }
+
+        .table-info,
+        .table-info > th,
+        .table-info > td {
+            background-color: #bee5eb;
+        }
+
+        .table-info th,
+        .table-info td,
+        .table-info thead th,
+        .table-info tbody + tbody {
+            border-color: #86cfda;
+        }
+
+        .table-hover .table-info:hover {
+            background-color: #abdde5;
+        }
+
+        .table-hover .table-info:hover > td,
+        .table-hover .table-info:hover > th {
+            background-color: #abdde5;
+        }
+
+        .table-warning,
+        .table-warning > th,
+        .table-warning > td {
+            background-color: #ffeeba;
+        }
+
+        .table-warning th,
+        .table-warning td,
+        .table-warning thead th,
+        .table-warning tbody + tbody {
+            border-color: #ffdf7e;
+        }
+
+        .table-hover .table-warning:hover {
+            background-color: #ffe8a1;
+        }
+
+        .table-hover .table-warning:hover > td,
+        .table-hover .table-warning:hover > th {
+            background-color: #ffe8a1;
+        }
+
+        .table-danger,
+        .table-danger > th,
+        .table-danger > td {
+            background-color: #f5c6cb;
+        }
+
+        .table-danger th,
+        .table-danger td,
+        .table-danger thead th,
+        .table-danger tbody + tbody {
+            border-color: #ed969e;
+        }
+
+        .table-hover .table-danger:hover {
+            background-color: #f1b0b7;
+        }
+
+        .table-hover .table-danger:hover > td,
+        .table-hover .table-danger:hover > th {
+            background-color: #f1b0b7;
+        }
+
+        .table-light,
+        .table-light > th,
+        .table-light > td {
+            background-color: #fdfdfe;
+        }
+
+        .table-light th,
+        .table-light td,
+        .table-light thead th,
+        .table-light tbody + tbody {
+            border-color: #fbfcfc;
+        }
+
+        .table-hover .table-light:hover {
+            background-color: #ececf6;
+        }
+
+        .table-hover .table-light:hover > td,
+        .table-hover .table-light:hover > th {
+            background-color: #ececf6;
+        }
+
+        .table-dark,
+        .table-dark > th,
+        .table-dark > td {
+            background-color: #c6c8ca;
+        }
+
+        .table-dark th,
+        .table-dark td,
+        .table-dark thead th,
+        .table-dark tbody + tbody {
+            border-color: #95999c;
+        }
+
+        .table-hover .table-dark:hover {
+            background-color: #b9bbbe;
+        }
+
+        .table-hover .table-dark:hover > td,
+        .table-hover .table-dark:hover > th {
+            background-color: #b9bbbe;
+        }
+
+        .table-active,
+        .table-active > th,
+        .table-active > td {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table-hover .table-active:hover {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table-hover .table-active:hover > td,
+        .table-hover .table-active:hover > th {
+            background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        .table .thead-dark th {
+            color: #fff;
+            background-color: #343a40;
+            border-color: #454d55;
+        }
+
+        .table .thead-light th {
+            color: #495057;
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        .table-dark {
+            color: #fff;
+            background-color: #343a40;
+        }
+
+        .table-dark th,
+        .table-dark td,
+        .table-dark thead th {
+            border-color: #454d55;
+        }
+
+        .table-dark.table-bordered {
+            border: 0;
+        }
+
+        .table-dark.table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .table-dark.table-hover tbody tr:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.075);
+        }
+
+        @media (max-width: 575.98px) {
+            .table-responsive-sm {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-sm > .table-bordered {
+                border: 0;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .table-responsive-md {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-md > .table-bordered {
+                border: 0;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .table-responsive-lg {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-lg > .table-bordered {
+                border: 0;
+            }
+        }
+
+        @media (max-width: 1199.98px) {
+            .table-responsive-xl {
+                display: block;
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .table-responsive-xl > .table-bordered {
+                border: 0;
+            }
+        }
+
+        .table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .table-responsive > .table-bordered {
+            border: 0;
         }
     </style>
     <link rel="image_src" href="https://img.youtube.com/vi/b2I51wKU7_U/0.jpg" />
@@ -410,45 +760,35 @@ if(dObj)
                                 <div class="chamadas-secundarias">
 
 
-                                    <div class="col-lg-12">
-                                        <div class="card card-info card-outline">
-                                            <div class="card-header p-3">
-
-                                                <h2>Relatório de desperdicio</h2>  
-
-
-                                            </div>
-                                            <div class="card-body p-2" >                                     
-                                                <div class="flexigrid">
-                                                    <table class="table table-bordered table-striped" id="relatorio">
-                                                        <thead>
-                                                            <tr>
-                                                                <th>Dia</th>
-                                                                <th>Tipo de Refeição</th>
-                                                                <th>Cardápio</th>
-                                                                <th>Quantidade de Pessoas</th>
-                                                                <th>Total desperdiçado</th>
-                                                                <th>Observação</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <?php foreach ($dados as $d) : ?>
-                                                                <tr>
-                                                                    <?php $data = explode("-", $d->dia);
-                                                                    $data = "$data[2]/$data[1]/$data[0]"; ?>
-                                                                    <td width="10%"><?= $data ?></td>
-                                                                    <td width="13%"><?= $d->tipo ?></td>
-                                                                    <td width="24%"><?= $d->nome ?></td>
-                                                                    <td width="16%"><?= $d->quantidade_pessoas ?></td>
-                                                                    <td width="14%"><?= $d->peso ?></td>
-                                                                    <td width="23%"><?= $d->observacao ?></td>
-                                                                </tr>
+                                    <div class="card-body p-2" >                                     
+                                        <div class="flexigrid">
+                                            <table class="table table-bordered " id="rel">
+                                                <thead class="thead-dark">
+                                                    <tr>
+                                                        <th><div class="text-center">Dia</div></th>
+                                                        <th><div class="text-center">Refeição</div></th>
+                                                        <th><div class="text-center">Cardápio</div></th>
+                                                        <th><div class="text-center">Pessoas</div></th>
+                                                        <th><div class="text-center">Desperdício</div></th>
+                                                        <th><div class="text-center">Observação</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($dados as $d) : ?>
+                                                        <tr>
+                                                            <?php $data = explode("-", $d->dia);
+                                                            $data = "$data[2]/$data[1]/$data[0]"; ?>
+                                                            <td width="1%"><?= $data ?></td>
+                                                            <td width="9%"><div class="text-center"><?= $d->tipo ?></div></td>
+                                                            <td width="15%"><?= $d->nome ?></td>
+                                                            <td width="11%"><div class="text-center"><?= $d->quantidade_pessoas ?></div></td>
+                                                            <td width="1%"><div class="text-center"><?= $d->peso ?></div></td>
+                                                            <td width="18%"><?= $d->observacao ?></td>
+                                                        </tr>
 <?php endforeach; ?>
-                                                        </tbody>
-                                                    </table>  
-                                                </div>                              
-                                            </div>
-                                        </div>
+                                                </tbody>
+                                            </table>  
+                                        </div>                              
                                     </div>
 
 
@@ -460,17 +800,14 @@ if(dObj)
 
                                 <div class="variacao-module-04 noticias-acontece-no-campus module span6 variacao-module-00">
                                     <div class="outstanding-header">				
-                                        <h2 class="outstanding-title">Valor gasto com a comida desperdiçada semana passada</h2>
+                                        <h2 class="outstanding-title">Gasto médio com a comida desperdiçada</h2>
 
                                     </div>
 
-                                    <canvas id="barra" style="display: block; width: 213px; height: 120px;" width="173" height="106" class="chartjs-render-monitor"></canvas>
+                                    <canvas id="barra" style="display: block; width: 213px; height: 120px;" width="173" height="126" class="chartjs-render-monitor"></canvas>
                                     <div class="outstanding-footer">
                                         <a href="https://portal.ifs.ifsuldeminas.edu.br/index.php/component/content/category/82-acontece-no-campus" class="outstanding-link">
-                                            <span class="text">Mais</span>
-                                            <span class="icon-box">                                          
-                                                <i class="icon-angle-right icon-light"><span class="hide">&nbsp;</span></i>
-                                            </span>
+                                            
                                         </a>	
                                     </div>
 
@@ -479,29 +816,13 @@ if(dObj)
 
                                 </div>
                                 <div class="module span6">
-                                    <div class="outstanding-header">				<h2 class="outstanding-title">Acesso Rápido</h2>
-
+                                    <div class="outstanding-header">				
+                                        <h2 class="outstanding-title">Porcentagem de desperdício por dia</h2>
                                     </div>
 
+                                <canvas id="pizza" style="display: block; width: 213px; height: 120px;" width="173" height="126" class="chartjs-render-monitor"></canvas>
 
-
-                                    <div class="custom"  >
-                                        <table style="width: 100%; height: 222px;">
-                                            <tbody>
-                                                <tr>
-                                                    <td><a href="/index.php/nti/sistemas-solucoes" target="_self"><img src="/arquivos/banners/banner_acesso_rapido/icones_pequenos/sist.jpg" alt="sist" /></a></td>
-                                                    <td><a href="/index.php/component/content/article?id=169"><img src="/arquivos/banners/banner_acesso_rapido/icones_pequenos/doc.jpg" alt="doc" /></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="https://portal.ifsuldeminas.edu.br/pro-reitoria-extensao/relacoes-internacionais"><img src="/arquivos/banners/banner_acesso_rapido/icones_pequenos/inter.jpg" alt="inter" /></a></td>
-                                                    <td><a href="/index.php/component/content/article/72-acesso-rapido/259-publicacoes-artigos-cientificos" target="_blank" rel="noopener"><img src="/arquivos/banners/banner_acesso_rapido/icones_pequenos/tcc22.jpg" alt="tcc22" /></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><a href="https://portal.ifsuldeminas.edu.br/pro-reitoria-ensino/ead"><img src="/arquivos/banners/banner_acesso_rapido/icones_pequenos/ead.jpg" alt="ead" /></a></td>
-                                                    <td><a href="/index.php/component/content/article/68-institucional/departamentos/214-licitacoes"><img src="/arquivos/banners/banner_acesso_rapido/icones_pequenos/lici.jpg" alt="lici" /></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table></div>
+                                    
 
 
                                     <div class="outstanding-footer">
@@ -515,121 +836,22 @@ if(dObj)
                             <div class="row-fluid variacao-module-04">
 
                                 <div class="module span12">
-                                    <div class="outstanding-header">				<h2 class="outstanding-title">Vídeos</h2>
+                                    <div class="outstanding-header">				
+                                        <h2 class="outstanding-title">Desperdício alimentar por peso em quilos</h2>
 
                                     </div>
 
 
-                                    <!-- Make it responsive to window size -->
-                                    <script type="text/javascript">
-                                        //<![CDATA[
+                                    <!-- Começo Gráfico do peso -->
+                                    
 
-                                                function YoutubeGalleryClientWidth1() {
-                                                return YoutubeGalleryResults1 (
-                                                        window.innerWidth ? window.innerWidth : 0,
-                                                        document.documentElement ? document.documentElement.clientWidth : 0,
-                                                        document.body ? document.body.clientWidth : 0
-                                                        );
-                                                }
-                                        function YoutubeGalleryScrollLeft1() {
-                                        return YoutubeGalleryResults1 (
-                                                window.pageXOffset ? window.pageXOffset : 0,
-                                                document.documentElement ? document.documentElement.scrollLeft : 0,
-                                                document.body ? document.body.scrollLeft : 0
-                                                );
-                                        }
-                                        function YoutubeGalleryFindHorizontalOffset1(id) {
-                                        var node = document.getElementById(id);
-                                        var curleft = 0;
-                                        var curleftscroll = 0;
-                                        var scroll_left = YoutubeGalleryScrollLeft1();
-                                        if (node.offsetParent) {
-                                        do {
-                                        curleft += node.offsetLeft;
-                                        curleftscroll = 0;
-                                        } while (node = node.offsetParent);
-                                        var imaged_x = (curleft - curleftscroll) - scroll_left;
-                                        return imaged_x;
-                                        }
-                                        return 0;
-                                        }
-                                        function YoutubeGalleryResults1(n_win, n_docel, n_body) {
-                                        var n_result = n_win ? n_win : 0;
-                                        if (n_docel && (!n_result || (n_result > n_docel)))
-                                                n_result = n_docel;
-                                        return n_body && (!n_result || (n_result > n_body)) ? n_body : n_result;
-                                        }
-                                        function YoutubeGalleryAutoResizePlayer1(){
-                                        var clientWidth = YoutubeGalleryClientWidth1();
-                                        var playerObject = document.getElementById("youtubegalleryplayerid_1");
-                                        var mainObject = document.getElementById("YoutubeGalleryMainContainer1");
-                                        var parentObject = mainObject.parentNode;
-                                        var parentWidth = parentObject.offsetWidth;
-                                        var secondaryObject = document.getElementById("YoutubeGallerySecondaryContainer1");
-                                        var playerWidth = 430;
-                                        var x = YoutubeGalleryFindHorizontalOffset1("YoutubeGalleryMainContainer1");
-                                        var setWidth = false;
-                                        if (playerWidth > parentWidth)
-                                        {
-                                        playerWidth = parentWidth;
-                                        setWidth = true;
-                                        }
+                                    <canvas id="linha" style="display: block; width: 213px; height: 120px;" width="173" height="76" class="chartjs-render-monitor"></canvas>
 
-
-                                        if (x + playerWidth > clientWidth)
-                                        {
-                                        playerWidth = clientWidth - x;
-                                        setWidth = true;
-                                        }
-
-                                        if (playerObject.width != playerWidth)
-                                                setWidth = true;
-                                        if (setWidth)
-                                        {
-                                        mainObject.style.width = (playerWidth) + "px";
-                                        var newH = 245 / (430 / playerWidth);
-                                        secondaryObject.style.width = (playerWidth) + "px";
-                                        secondaryObject.style.height = (newH) + "px";
-                                        playerObject.width = (playerWidth) + "px";
-                                        playerObject.height = (newH) + "px";
-                                        }
-                                        }
-
-                                        //]]>
-                                    </script>
-
-                                    <a name="youtubegallery"></a>
-                                    <div class="videos-container" id="YoutubeGalleryMainContainer1">
-                                        <div class="span7">
-                                            <!-- Video Player -->
-                                            <div id="YoutubeGallerySecondaryContainer1"><iframe width="430" height="245" src="https://www.youtube.com/embed/b2I51wKU7_U?autoplay=0&amp;hl=en&amp;fs=1&amp;showinfo=1&amp;iv_load_policy=3&amp;rel=0&amp;loop=0&amp;border=1&amp;controls=1&amp;start=0&amp;end=0" frameborder="1" id="youtubegalleryplayerid_1" onLoad="YoutubeGalleryAutoResizePlayer1();" allowfullscreen></iframe></div>
-
-                                            <div style="padding: 5px; font-size: 15px; height: 50px;"> 
-
-                                                <h3 style=" line-height: 130%!important; color:#175210!important;"><b><span id="YoutubeGalleryVideoTitle1">Matrícula 2020</span></b></h3>
-
-                                            </div>
-
-                                        </div>
-
-                                        <div class="span5">
-                                            <!-- if number of videos more than 0 -->
-                                            <div class="video-item row-fluid"><div class="span5" style="padding: 0 0 15px 5px"><a href="javascript:YoutubeGalleryHotVideoSwitch1('b2I51wKU7_U','youtube',213)" class="link-video-item"> <img src="https://img.youtube.com/vi/b2I51wKU7_U/0.jpg" style="width:300px;height:80px" alt="Matrícula 2020" title="Matrícula 2020" /> </a></div>
-                                                <div class="span7" style="padding: 2px; font-size: 15px"><h3 style=" line-height: 130%!important; color:#175210!important;"><b><a href="javascript:YoutubeGalleryHotVideoSwitch1('b2I51wKU7_U','youtube',213)" class="link-video-item"> Matrícula 2020 </a></b></h3></div>
-                                                <div id="YoutubeGalleryThumbTitle1_213" class="hide">Matrícula 2020</div><div id="YoutubeGalleryThumbDescription1_213" class="hide">Candidatos aprovados começam a fazer matrícula para 2020.</div><div id="YoutubeGalleryThumbLink1_213" class="hide">https://youtu.be/b2I51wKU7_U</div><div id="YoutubeGalleryThumbStartSecond1_213" class="hide">0</div><div id="YoutubeGalleryThumbEndSecond1_213" class="hide">0</div></div><div class="video-item row-fluid"><div class="span5" style="padding: 0 0 15px 5px"><a href="javascript:YoutubeGalleryHotVideoSwitch1('79V6zEEjn0U','youtube',212)" class="link-video-item"> <img src="https://img.youtube.com/vi/79V6zEEjn0U/0.jpg" style="width:300px;height:80px" alt="Reportagem Enfermaria" title="Reportagem Enfermaria" /> </a></div>
-                                                <div class="span7" style="padding: 2px; font-size: 15px"><h3 style=" line-height: 130%!important; color:#175210!important;"><b><a href="javascript:YoutubeGalleryHotVideoSwitch1('79V6zEEjn0U','youtube',212)" class="link-video-item"> Reportagem Enfermaria </a></b></h3></div>
-                                                <div id="YoutubeGalleryThumbTitle1_212" class="hide">Reportagem Enfermaria</div><div id="YoutubeGalleryThumbDescription1_212" class="hide">Mais de 1600 atendimentos somente nos 3 primeiros meses deste ano. Os números contabilizados pelo Núcleo de Saúde dos Alunos do Campus Inconfidentes revelam crescimento na procura pelos serviços médicos.</div><div id="YoutubeGalleryThumbLink1_212" class="hide">https://youtu.be/79V6zEEjn0U</div><div id="YoutubeGalleryThumbStartSecond1_212" class="hide">0</div><div id="YoutubeGalleryThumbEndSecond1_212" class="hide">0</div></div><div class="video-item row-fluid"><div class="span5" style="padding: 0 0 15px 5px"><a href="javascript:YoutubeGalleryHotVideoSwitch1('ehizUR45HBY','youtube',211)" class="link-video-item"> <img src="https://img.youtube.com/vi/ehizUR45HBY/0.jpg" style="width:300px;height:80px" alt="Reportagem Dia da Matemática" title="Reportagem Dia da Matemática" /> </a></div>
-                                                <div class="span7" style="padding: 2px; font-size: 15px"><h3 style=" line-height: 130%!important; color:#175210!important;"><b><a href="javascript:YoutubeGalleryHotVideoSwitch1('ehizUR45HBY','youtube',211)" class="link-video-item"> Reportagem Dia da Matemática </a></b></h3></div>
-                                                <div id="YoutubeGalleryThumbTitle1_211" class="hide">Reportagem Dia da Matemática</div><div id="YoutubeGalleryThumbDescription1_211" class="hide">Alunos de Licenciatura de Matemática do Campus Inconfidentes promovem atividade para comemorar o Dia Nacional da Matemática.</div><div id="YoutubeGalleryThumbLink1_211" class="hide">https://youtu.be/ehizUR45HBY</div><div id="YoutubeGalleryThumbStartSecond1_211" class="hide">0</div><div id="YoutubeGalleryThumbEndSecond1_211" class="hide">0</div></div><!-- Show navigation bar with 3 columns and width should be 500px. -->
-
-                                        </div> 		
-                                    </div>
-
-                                    <!-- Make it responsive to window size -->
+                                    <!-- Final do gráfico do peso -->
                                     <script language="JavaScript">
-                                                        //<![CDATA[
-                                                        window.onresize = function() { YoutubeGalleryAutoResizePlayer1(); }
-                                                        //]]>
+                                        //<![CDATA[
+                                        window.onresize = function() { YoutubeGalleryAutoResizePlayer1(); }
+                                        //]]>
                                     </script>
 
 
@@ -661,7 +883,7 @@ if(dObj)
         <footer>
             <div class="footer-atalhos">
                 <div class="container">
-                    <div class="pull-right voltar-ao-topo"><a href="#portal-siteactions"><i class="icon-chevron-up"></i>&nbsp;Voltar para o topo</a></div>
+                    <div class="pull-right voltar-ao-topo"><a href="<?= site_url("site/index/") ?>#portal-siteactions"><i class="icon-chevron-up"></i>Voltar para o topo</a></div>
                 </div>
             </div>
             <div class="container container-menus">
@@ -736,7 +958,7 @@ if(dObj)
             <div class="footer-atalhos visible-phone">
                 <div class="container">
                     <span class="hide">Fim do conteúdo da página</span>
-                    <div class="pull-right voltar-ao-topo"><a href="#portal-siteactions"><i class="icon-chevron-up"></i>&nbsp;Voltar para o topo</a></div>
+                    <div class="pull-right voltar-ao-topo"><a href="<?= site_url("site/index/") ?>"><i class="icon-chevron-up"></i>&nbsp;Voltar para o topo</a></div>
                 </div>
             </div>
         </footer>
@@ -752,15 +974,21 @@ if(dObj)
     <script src="<?= base_url("bootstrap/js/Chart.min.js") ?>"></script>
 
 
+    <script type="text/javascript" src="<?= base_url("bootstrap/js/jquery.dataTables.min.js") ?>"></script>
+    <script type="text/javascript">
+                                            $(document).ready(function () {
+                                            $('#rel').DataTable();
+                                            });</script>
     <script src="<?= base_url("public/dist/js/config_graph_bar.js") ?>"> </script>
+    
     <script>
-                        var labels_grafico1 = <?= $labels_bar1 ?>;
-                        var dados_grafico1 = <?= $data_bar1 ?>;
-                        var labels_grafico2 = <?= $labels_bar2 ?>;
-                        var dados_grafico2 = <?= $data_bar2 ?>;
-                        var barra = gerar_grafico_barra_vertical("barra", labels_grafico2, dados_grafico2, "Desperdicio em reais ");
-                        var pizza = gerar_grafico_barra_horizontal("pizza", labels_grafico1, dados_grafico1, "Porcentagem de desperdício ");
-                        var linha = gerar_grafico_linha("myChart", labels_grafico1, dados_grafico1);
+        var labels_grafico1 = <?= $labels_bar1 ?>;
+        var dados_grafico1 = <?= $data_bar1 ?>;
+        var labels_grafico2 = <?= $labels_bar2 ?>;
+        var dados_grafico2 = <?= $data_bar2 ?>;
+        var barra = gerar_grafico_barra_vertical("barra", labels_grafico2, dados_grafico2, "Desperdicio em reais ");
+        var pizza = gerar_grafico_barra_horizontal("pizza", labels_grafico1, dados_grafico1, "Porcentagem de desperdício ");
+        var linha = gerar_grafico_linha("linha", labels_grafico1, dados_grafico1);
     </script>
 </body>
 </html>

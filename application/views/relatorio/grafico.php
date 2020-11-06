@@ -21,7 +21,7 @@
                     <form class="form-inline">
                         <div class="form-group mb-2 col-md-4">
                             <label for="select_data_inicial" class="">Data Inicial: </label>
-                            <select name="campo_dias" class="custom-select ml-2 col-8" id="select_data_inicial">
+                            <select name="campo_dias_inicial" class="custom-select ml-2 col-8" id="select_data_inicial">
                                 <?php
                                 foreach ($dias as $d) {
                                     $data = explode("-", $d->dia);
@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group mb-2 col-md-4">
                             <label for="select_data_inicial">Data Final: </label>
-                            <select name="campo_dias" class="custom-select ml-2 col-8">
+                            <select name="campo_dias_final" class="custom-select ml-2 col-8">
                                 <?php
                                 foreach ($dias as $d) {
                                     $data = explode("-", $d->dia);
