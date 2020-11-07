@@ -18,7 +18,7 @@
 
             <div class="card-body p-2" >  
                 
-                    <form class="form-inline">
+                <form class="form-inline" method="post" action="<?= site_url("relatorio/grafico") ?>">
                         <div class="form-group mb-2 col-md-4">
                             <label for="select_data_inicial" class="">Data Inicial: </label>
                             <select name="campo_dias_inicial" class="custom-select ml-2 col-8" id="select_data_inicial">
@@ -41,6 +41,9 @@
                                 ?>
                             </select>
                         </div>
+                        <div class="form-group mb-2 col-md-4">
+                            <button class="add-anchor add_button btn btn-success floatR">Mostrar Gráficos</button>
+                        </div>                     
                     </form>
 
                
