@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="<?= base_url("public/dist/css/bootstrap_gov.min.css") ?>" type='text/css'/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url("assets/grocery_crud/themes/bootstrap/css/flexigrid.css") ?>">
     <link rel="stylesheet" href="<?= base_url("public/dist/css/template-verde.css") ?>" type='text/css'/>
-    <link rel="stylesheet" href="<?= base_url("public/dist/css/icones-bmp-verde.css") ?>" type='text/css'/>
+    <link rel="stylesheet" href="https://portal.ifs.ifsuldeminas.edu.br/templates/padraogoverno01/css/icones-bmp-verde.css" type='text/css'/>
     <link rel="stylesheet" href="<?= base_url("public/dist/css/font-awesome.min.css") ?>" type='text/css'/>
     <!--[if lt IE 10]>
     <link rel="stylesheet" href="/templates/padraogoverno01/css/ie.css" />
@@ -475,17 +475,19 @@ dObj.innerHTML=description;
 
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link href='<?= base_url("public/dist/css/fontes.css") ?>'  rel='stylesheet' type='text/css'>
+    <link href="<?= base_url("public/dist/css/fontes.css") ?>"  rel='stylesheet' type='text/css'>
 
 </head>
-<body >
+<body class="responsivo-menor-979">
 
     <!-- Barra Brasil -->
     <div id="barra-brasil" style="background:#7F7F7F; height: 20px; padding:0 0 0 10px;display:block;"> 
+        <div class="wrapper-barra-brasil">
         <ul id="menu-barra-temp" style="list-style:none;">
             <li style="display:inline; float:left;padding-right:10px; margin-right:10px; border-right:1px solid #EDEDED"><a href="http://brasil.gov.br" style="font-family:sans,sans-serif; text-decoration:none; color:white;">Portal do Governo Brasileiro</a></li> 
             <li><a style="font-family:sans,sans-serif; text-decoration:none; color:white;" href="http://epwg.governoeletronico.gov.br/barra/atualize.html">Atualize sua Barra de Governo</a></li>
         </ul>
+        </div>
     </div>
 
 
@@ -700,30 +702,30 @@ dObj.innerHTML=description;
                                         <div class="banneritem item active">
                                             <a
                                                 href="/index.php/component/banners/click/24"
-                                                title="Bem-vindo ao Campus Inconfidentes">
+                                                title="Temos um dos restaurantes estudantis mais bem estruturados do Brasil e nunca nos faltou alimento. Por isso, não desperdice">
                                                 <img src="<?= base_url("bootstrap/img/slide3.jpg") ?>"
-                                                     alt="Bem-vindo ao Campus Inconfidentes"
+                                                     alt="Temos um dos restaurantes estudantis mais bem estruturados do Brasil e nunca nos faltou alimento. Por isso, não desperdice"
                                                      />
                                             </a>
                                             <div class="faixa"></div>
                                             <h1>
                                                 <a href="/index.php/component/banners/click/24">
-                                                    Bem-vindo ao Campus Inconfidentes
+                                                   Temos um dos restaurantes estudantis mais bem estruturados do Brasil e nunca nos faltou alimento. Por isso, não desperdice !
                                                 </a>
                                             </h1>
                                             <div class="clr"></div>
                                         </div>
                                         <div class="banneritem item ">
                                             <a href="/index.php/component/banners/click/51"
-                                               title="Desperdício">
+                                               title="No refeitório trabalham profissionais muito bem capacitados, que nos proporcionam alimentos da melhor qualidade. A receita para isso é muito amor e dedicação para com a saúde alimentar dos que frequentam o restaurante estudantil.">
                                                 <img src="<?= base_url("bootstrap/img/rest.jpg") ?>"
-                                                     alt="Desperdício"
+                                                     alt="No refeitório trabalham profissionais muito bem capacitados, que nos proporcionam alimentos da melhor qualidade"
                                                      />
                                             </a>
                                             <div class="faixa"></div>
                                             <h1>
                                                 <a href="/index.php/component/banners/click/51">
-                                                    Direção Geral completa 2 anos de trabalhos. Relatório de gestão é divulgado				</a>
+                                                    No refeitório trabalham profissionais muito bem capacitados, que nos proporcionam alimentos da melhor qualidade</a>
                                             </h1>
                                             <div class="clr"></div>
                                         </div>
@@ -746,8 +748,8 @@ dObj.innerHTML=description;
 
                                     </div>
                                     <ol class="carousel-indicators carousel-indicators-custom">
-                                        <li data-slide-to="0" data-target="#banner-carousel-202" class="active"><a href="#" title="Bem-vindo ao Campus Inconfidentes">0</a></li>
-                                        <li data-slide-to="1" data-target="#banner-carousel-202" class=""><a href="#" title="Direção Geral completa 2 anos de trabalhos. Relatório de gestão é divulgado">1</a></li>
+                                        <li data-slide-to="0" data-target="#banner-carousel-202" class="active"><a href="#" title="Bem-vindo ao NUTRIIF">0</a></li>
+                                        <li data-slide-to="1" data-target="#banner-carousel-202" class=""><a href="#" title="No refeitório trabalham profissionais muito bem capacitados, que nos proporcionam alimentos da melhor qualidade">1</a></li>
                                         <li data-slide-to="2" data-target="#banner-carousel-202" class="last"><a href="#" title="Receita Federal faz nova doação de bebida para produção de álcool em gel">2</a></li>
                                     </ol>
                                 </div>
