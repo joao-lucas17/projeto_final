@@ -36,6 +36,38 @@ class Relatorio extends CI_Controller {
         $this->template->load("template/adminlte/admin", "relatorio/grafico", $dados3);
     }
     
+    function grafico_ajax(){
+        $dataInicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
+        $dataFinal = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
+        
+        
+        $resultado = $this->relatorio_model->getDesperdicioByDate($dataInicial,$dataFinal);
+        $graficos['graph1'] = $this->_getDataGrafico1Ajax($resultado);
+        
+        $resultado2 = $this->relatorio_model->getDesperdicioValor($dataInicial,$dataFinal);
+        $graficos['graph2'] = $this->_getDataGrafico1Ajax($resultado2);
+        
+        $resultado3 = $this->relatorio_model->getDesperdicioByTipoRefeicao($dataInicial,$dataFinal);
+        $graficos['graph4'] = $this->_getDataGrafico1Ajax($resultado3);
+        
+        $resultado4 = $this->relatorio_model->getPessoasAtendidasPorDia($dataInicial,$dataFinal);
+        $graficos['graph5'] = $this->_getDataGrafico1Ajax($resultado4);
+                                              
+        echo json_encode($graficos);        
+//      
+    }
+    public function _getDataGrafico1Ajax($resultado){        
+        $labels = [];
+        $data = [];
+        foreach($resultado as $row){
+            $labels[] =  $row->dia;
+            $data[] = floatval($row->total);
+        }
+       $result['label'] = $labels;
+       $result['data'] = $data;
+       return $result;
+    }
+    
     public function _getDataGrafico1($resultado, $name_label, $name_data){        
         $labels = [];
         $data = [];

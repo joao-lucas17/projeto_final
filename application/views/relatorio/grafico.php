@@ -32,7 +32,7 @@
                         </div>
                         <div class="form-group mb-2 col-md-4">
                             <label for="select_data_inicial">Data Final: </label>
-                            <select name="campo_dias_final" class="custom-select ml-2 col-8">
+                            <select name="campo_dias_final" class="custom-select ml-2 col-8" id="select_data_final">
                                 <?php
                                 foreach ($dias as $d) {
                                     $data = explode("-", $d->dia);
@@ -42,7 +42,7 @@
                             </select>
                         </div>
                         <div class="form-group mb-2 col-md-4">
-                            <button class="add-anchor add_button btn btn-success floatR">Mostrar Gráficos</button>
+                            <button type="button" class="add-anchor add_button btn btn-success floatR" id="btn_atualiza">Mostrar Gráficos</button>
                         </div>                     
                     </form>
 
@@ -142,6 +142,64 @@
                         </div>
                     </div>
 
+<!--                    gráfico de barras-->
+                    <div class="col-sm-6">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="col-11">
+                                    <h6 class="m-0 font-weight-bold text-info">Comida desperdiçada por refeição</h6>
+                                </div>
+                                <div class="col-2">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Fazer Download:</div>
+                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_png.png") ?>" class="img-icone"/>PNG</a>
+                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_jpg.png") ?>" class="img-icone"/>JPG</a>
+                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_gif.png") ?>" class="img-icone"/>GIF</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="refeicao" style="display: block; width: 213px; height: 120px;" width="173" height="106" class="chartjs-render-monitor"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+<!--                    gráfico de barras-->
+                    <div class="col-sm-6">
+                        <div class="card shadow mb-4">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="col-11">
+                                    <h6 class="m-0 font-weight-bold text-info">Quantidade Pessoas Atendidas</h6>
+                                </div>
+                                <div class="col-2">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Fazer Download:</div>
+                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_png.png") ?>" class="img-icone"/>PNG</a>
+                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_jpg.png") ?>" class="img-icone"/>JPG</a>
+                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_gif.png") ?>" class="img-icone"/>GIF</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="pessoas_atendidas" style="display: block; width: 213px; height: 120px;" width="173" height="106" class="chartjs-render-monitor"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div> 
 <!--final dos gráficos-->
             </div>
@@ -165,6 +223,30 @@
     var barra = gerar_grafico_barra_vertical("barra", labels_grafico2, dados_grafico2, "Desperdicio em reais " );        
     var pizza = gerar_grafico_barra_horizontal("pizza", labels_grafico1, dados_grafico1, "Porcentagem de desperdício " );                
     var linha = gerar_grafico_linha("myChart", labels_grafico1, dados_grafico1 );                
+    
+    var btn = document.querySelector("#btn_atualiza");
+    btn.addEventListener('click', function(){
+    let dtinicio = $("#select_data_inicial option:selected").text();
+    let dtfinal = $("#select_data_final option:selected").text();
+    $.ajax({
+        method: "POST",
+        url: "<?= site_url('relatorio/grafico_ajax') ?>",
+        data: { data_inicio: dtinicio, data_final: dtfinal }
+      })
+        .done(function( msg ) {
+            let dados = JSON.parse(msg);
+            console.log(msg);
+            gerar_grafico_barra_vertical("barra", dados.graph1.label, dados.graph1.data, "Desperdicio em reais " ); 
+            gerar_grafico_barra_horizontal("pizza", dados.graph2.label, dados.graph2.data, "Porcentagem de desperdício " ); 
+            gerar_grafico_linha("myChart", dados.graph2.label, dados.graph2.data );    
+            
+            
+            gerar_grafico_barra_horizontal("refeicao", dados.graph4.label, dados.graph4.data, "Quantidade de desperdicio por refeição " ); 
+            gerar_grafico_barra_horizontal("pessoas_atendidas", dados.graph5.label, dados.graph5.data, "Quantidade pessoas atendidas " ); 
+        });
+    });
+
+    
 </script>
 
 

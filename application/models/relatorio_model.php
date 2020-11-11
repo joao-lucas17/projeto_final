@@ -7,8 +7,10 @@ class relatorio_model extends CI_Model {
     }
 
     public function getDias() {
-        $query = $this->db->select("idrefeicao, dia")->from("refeicao")->get();
-        return $query->result();
+        $this->db->select("idrefeicao, dia");
+        $this->db->order_by("dia");
+        $this->db->group_by("dia");
+        return $this->db->get("refeicao")->result();
     }
 
     public function getDiasPeso() {
@@ -16,7 +18,25 @@ class relatorio_model extends CI_Model {
     }
     
     public function getDesperdicioByDate($inicio, $final){
-        $this->db->select("dia, sum(peso) as total");
+        $this->db->select("concat(day(dia),'/', month(dia),'/',year(dia)) as dia, sum(peso) as total");
+        $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
+        $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
+        $this->db->group_by("dia");
+        $this->db->order_by('dia');
+        return $this->db->get("desperdicio")->result();
+    }
+    
+    public function getDesperdicioByTipoRefeicao($inicio, $final){
+        $this->db->select("tipo as dia, sum(peso) as total");
+        $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
+        $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
+        $this->db->group_by("tipo");
+        $this->db->order_by('dia');
+        return $this->db->get("desperdicio")->result();
+    }
+    
+    public function getPessoasAtendidasPorDia($inicio, $final){
+        $this->db->select("concat(day(dia),'/', month(dia),'/',year(dia)) as dia, sum(quantidade_pessoas) as total");
         $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
         $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
         $this->db->group_by("dia");
