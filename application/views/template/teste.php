@@ -592,6 +592,7 @@ dObj.innerHTML=description;
                             <li class="item-132"><a href="/index.php/contato" >Contato</a></li>
                             <li class="item-288"><a href="https://portal.ifs.ifsuldeminas.edu.br/index.php/nti/sistemas-solucoes" >Acesso a Sistemas</a></li>
                             <li class="item-341"><a href="https://portal.ifsuldeminas.edu.br/index.php/ouvidoria" target="_blank" rel="noopener noreferrer">Ouvidoria</a></li>
+                            <li class="item-132"><a href="<?= site_url("relatorio/desperdicio") ?>" >Relatório do Desperdício</a></li>
                             <li class="item-132"><a href="<?= site_url("login/index") ?>" >Acesso Restrito Nutriif</a></li>
                         </ul>
                         <span class="hide">Fim do menu de serviços</span>
@@ -632,7 +633,7 @@ dObj.innerHTML=description;
 
                             </div>
                             <nav class="span9 ">
-                                <h2 >Destaques <i class="icon-chevron-up visible-phone visible-tablet pull-right"></i></h2><!-- visible-phone visible-tablet -->
+                                <h2 >Destaques <i class="icon-chevron-down visible-phone visible-tablet pull-right"></i></h2><!-- visible-phone visible-tablet -->
 
                                 <ul>
                                     <li class="item-101 current active"><a href="/index.php" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_pagina_inicial.png" alt="Página inicial" /></a></li><li class="item-121"><a href="/index.php/noticias" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_noticias.png" alt="Notícias" /></a></li><li class="item-295"><a href="/index.php/portal-do-aluno" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_portal_aluno.png" alt="Portal do Aluno" /></a></li><li class="item-317"><a href="/index.php/portal-do-servidor" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_portal_servidor.png" alt="Portal do Servidor" /></a></li><li class="item-336"><a href="https://portal.ifsuldeminas.edu.br/vestibular-proen" target="_blank" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_vestibular.png" alt="Vestibular" /></a></li><li class="item-337"><a href="https://concurso.ifsuldeminas.edu.br/" target="_blank" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_concurso.png" alt="Concurso" /></a></li><li class="item-358"><a href="/index.php/eventos" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_eventos.png" alt="Eventos" /></a></li><li class="item-338 parent"><a href="/index.php/editais" ><img src="/arquivos/banners/banner_menu/acesso_rapido/botao_editais.png" alt="Editais" /></a></li></ul>
