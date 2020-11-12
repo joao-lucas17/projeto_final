@@ -23,11 +23,14 @@ class Relatorio extends CI_Controller {
         $this->template->load("template/adminlte/admin", "relatorio/desperdicio", $dados);
     }
     
-    public function grafico(){     
-        $resultado = $this->relatorio_model->getDesperdicioByDate('2020-09-16','2020-09-22');
+    public function grafico(){
+        $dataInicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
+        $dataFinal = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
+        
+        $resultado = $this->relatorio_model->getDesperdicioByDate($dataInicial,$dataFinal);
         $dados1 = $this->_getDataGrafico1($resultado, 'labels_bar1', 'data_bar1');        
         
-        $resultado2 = $this->relatorio_model->getDesperdicioValor('2020-09-16','2020-09-22');
+        $resultado2 = $this->relatorio_model->getDesperdicioValor($dataInicial,$dataFinal);
         $dados2 = $this->_getDataGrafico1($resultado2, 'labels_bar2', 'data_bar2');        
 //        
 	$dias["dias"] = $this->relatorio_model->getDias();   

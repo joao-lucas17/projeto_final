@@ -50,7 +50,7 @@ function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
     return barra;
 }
 
-function gerar_grafico_barra_horizontal(idElemento, labels, data, label) {
+function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
     var barra = new Chart(ctx, {
         type: 'horizontalBar',
@@ -116,6 +116,74 @@ function gerar_grafico_linha(idElemento, labels, data) {
         }
     });
     return linha;
+}
+
+function gerar_grafico_barra_horizontal_refeicao(idElemento, labels, data, label) {
+    var ctx = document.getElementById(idElemento);
+    var barra = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                    label: label,
+                    data: data,
+                    lineTension: 0,
+                    backgroundColor: "rgba(40,149,3,0.92)",
+                    strokeColor: "rgba(220,220,220,1)",
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#09801B'
+                }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            
+                        }
+                    }]
+            },
+            legend: {
+                display: false,
+            },
+        }
+    });
+    return barra;
+}
+
+function gerar_grafico_barra_horizontal_pessoas(idElemento, labels, data, label) {
+    var ctx = document.getElementById(idElemento);
+    var barra = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: {
+            labels: labels,
+            datasets: [{
+                    label: label,
+                    data: data,
+                    lineTension: 0,
+                    backgroundColor: "#FB9302",
+                    strokeColor: "rgba(220,220,220,1)",
+                    borderColor: 'white',
+                    borderWidth: 2,
+                    pointBackgroundColor: '#09801B'
+                }]
+        },
+        options: {
+            scales: {
+                xAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            
+                        }
+                    }]
+            },
+            legend: {
+                display: false,
+            },
+        }
+    });
+    return barra;
 }
 
 
