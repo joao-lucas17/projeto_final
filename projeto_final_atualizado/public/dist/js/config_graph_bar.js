@@ -71,9 +71,14 @@ function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, la
             scales: {
                 xAxes: [{
                         ticks: {
+                            max: 300,
+                            callback: function(value) {
+                                return value + "%";
+                            },
                             beginAtZero: true,
                             
-                        }
+                        },
+                        
                     }]
             },
             legend: {

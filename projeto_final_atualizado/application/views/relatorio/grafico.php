@@ -237,7 +237,7 @@
             let dados = JSON.parse(msg);
             console.log(msg);
             gerar_grafico_barra_vertical("valor_desperdicado", dados.graph2.label, dados.graph2.data, "Desperdicio em reais " ); 
-            gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph2.data, "Porcentagem de desperdício " ); 
+            gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph1.data, "Porcentagem de desperdício " ); 
             gerar_grafico_linha("peso_desperdicado", dados.graph1.label, dados.graph1.data );    
             
             
