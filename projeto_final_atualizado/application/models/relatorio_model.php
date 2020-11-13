@@ -60,17 +60,17 @@ class relatorio_model extends CI_Model {
         return $linha->preco_kg;
     }
     
-    public function getPorcetagemDesperdicio(){
+    public function getPorcetagemDesperdicio($dataInicial, $dataFinal){
         $query = "select dia, round(peso / total_desperdicado * 100, 2) as porcem from (
                     select dia, peso, total_desperdicado from desperdicio,  (
                     select sum(peso) as total_desperdicado from desperdicio
                     inner join refeicao on desperdicio.refeicao_idrefeicao = refeicao.idrefeicao
-                    where dia between '2020-09-18' and '2020-09-22') t, refeicao
+                    where dia between '$dataInicial' and '$dataFinal') t, refeicao
                     where refeicao_idrefeicao = refeicao.idrefeicao and
-                    dia between '2020-09-18' and '2020-09-22'
+                    dia between '$dataInicial' and '$dataFinal'
                     group by dia
                     ) t";
-        var_dump($this->db->query($query)->result());
+        return json_encode($this->db->query($query)->result_array());
     }
 
 }

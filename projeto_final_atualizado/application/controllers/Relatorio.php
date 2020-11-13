@@ -83,8 +83,15 @@ class Relatorio extends CI_Controller {
        return $result;
     }
     
-    public function teste(){
-        $this->relatorio_model->getPorcetagemDesperdicio();
+    public function _teste(){   
+        $data_Inicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
+        $data_Final = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
+        
+        $dataInicial = implode('-', array_reverse(explode('/', $data_Inicial)));
+        $dataFinal = implode('-', array_reverse(explode('/', $data_Final)));
+        
+       
+        return $this->relatorio_model->getPorcetagemDesperdicio($dataInicial, $dataFinal);
     }
     
 
