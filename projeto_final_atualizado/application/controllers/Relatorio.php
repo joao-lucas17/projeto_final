@@ -12,9 +12,6 @@ class Relatorio extends CI_Controller {
         $this->template->set("submenu", "Desperdicio");
     }
 
-    public function index() {
-        $this->load->view("filtro/filtro");
-    }
 
     public function desperdicio() {
         $this->db->join("desperdicio", "refeicao.idrefeicao = desperdicio.refeicao_idrefeicao");

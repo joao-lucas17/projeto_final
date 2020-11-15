@@ -133,7 +133,7 @@ function gerar_grafico_barra_horizontal_refeicao(idElemento, labels, data, label
                     label: label,
                     data: data,
                     lineTension: 0,
-                    backgroundColor: "rgba(40,149,3,0.92)",
+                    backgroundColor: ["rgba(40,149,3,0.92)", "#964811"],
                     strokeColor: "rgba(220,220,220,1)",
                     borderColor: 'white',
                     borderWidth: 2,
