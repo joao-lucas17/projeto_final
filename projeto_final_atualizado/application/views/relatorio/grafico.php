@@ -58,7 +58,7 @@
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <div class="col-11">
-                                    <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada semana passada</h6>
+                                    <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada</h6>
                                 </div>
                                 <div class="col-2">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
