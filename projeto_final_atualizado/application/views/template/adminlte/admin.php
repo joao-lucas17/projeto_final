@@ -56,7 +56,9 @@
                             </div>           
                         </div>
                         <!--          Conteudo do template-->
+                        <div id="print" class="conteudo">
                         <?= $contents ?>
+                        </div>
                     </div><!-- /.container-fluid -->
                 </section>
             </div>
@@ -84,6 +86,15 @@
         
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+        <script>
+function cont(){
+   var conteudo = document.getElementById('print').innerHTML;
+   tela_impressao = window.open('about:blank');
+   tela_impressao.document.write(conteudo);
+   tela_impressao.window.print();
+   tela_impressao.window.close();
+}
+</script>
         <!--  GroceryCRUD-->
         <?php 
         if (isset($js_files))

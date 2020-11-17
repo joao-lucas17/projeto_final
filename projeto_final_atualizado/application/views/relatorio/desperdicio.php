@@ -12,7 +12,8 @@
             </div>
             <div class="card-body p-2" >                                     
                 <div class="flexigrid">
-                    <table class="table table-bordered table-striped" id="relatorio">
+                   <div id="print" class="conteudo">
+                    <table class="table table-bordered table-striped" id="relatorio" name="relatorioDesperdicio">
                         <thead>
                             <tr>
                                 <th>Dia</th>
@@ -36,7 +37,11 @@
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
-                    </table>  
+                    </table>
+                        </div>
+                         <input type="button" onclick="cont();" value="Imprimir ">
+                    
+                   
                 </div>                              
             </div>
         </div>
@@ -52,4 +57,13 @@
     $(document).ready(function () {
         $('#relatorio').DataTable();
     });
+</script>
+<script>
+function cont(){
+   var conteudo = document.getElementById('print').innerHTML;
+   tela_impressao = window.open('about:blank');
+   tela_impressao.document.write(conteudo);
+   tela_impressao.window.print();
+   tela_impressao.window.close();
+}
 </script>
