@@ -74,8 +74,8 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="valor_desperdicado" style="display: block; width: 213px; height: 120px;" width="173" height="106" class="chartjs-render-monitor"></canvas>
+                                <div class="chart-area">            
+                                    <canvas id="valor_desperdicado" class="chartjs-render-monitor"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -103,8 +103,8 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="porcentagem_desperdicio" style="display: block; width: 213px; height: 120px;" width="173" height="106" class="chartjs-render-monitor"></canvas>
+                                <div class="chart-area">
+                                    <canvas id="porcentagem_desperdicio"  class="chartjs-render-monitor"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -213,22 +213,42 @@
 
 <script src="<?= base_url("public/dist/js/config_graph_bar.js") ?>"> </script>
 <script>
-    var labels_grafico1 = <?= $labels_bar1 ?> ;
-    var dados_grafico1 = <?= $data_bar1 ?> ;
+//    var labels_grafico1 = <?= $labels_bar1 ?> ;
+//    var dados_grafico1 = <?= $data_bar1 ?> ;
+//    
+//     var labels_grafico2 = <?= $labels_bar2 ?> ;
+//    var dados_grafico2 = <?= $data_bar2 ?> ;
+//    
+//    
+//    var barra = gerar_grafico_barra_vertical("valor_desperdicado", labels_grafico2, dados_grafico2, "Desperdicio em reais " );        
+//    var pizza = gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", labels_grafico1, dados_grafico1, "Porcentagem de desperdício " );                
+//    var linha = gerar_grafico_linha("peso_desperdicado", labels_grafico1, dados_grafico1 );                
+//    
     
-     var labels_grafico2 = <?= $labels_bar2 ?> ;
-    var dados_grafico2 = <?= $data_bar2 ?> ;
-    
-    
-    var barra = gerar_grafico_barra_vertical("valor_desperdicado", labels_grafico2, dados_grafico2, "Desperdicio em reais " );        
-    var pizza = gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", labels_grafico1, dados_grafico1, "Porcentagem de desperdício " );                
-    var linha = gerar_grafico_linha("peso_desperdicado", labels_grafico1, dados_grafico1 );                
-    
+    window.addEventListener('DOMContentLoaded', init, false);
+
     var btn = document.querySelector("#btn_atualiza");
-    btn.addEventListener('click', function(){
-    let dtinicio = $("#select_data_inicial option:selected").text();
-    let dtfinal = $("#select_data_final option:selected").text();
-    $.ajax({
+    btn.addEventListener('click', showGraphics);
+    
+    function init(){
+        var ndatas = $('#select_data_inicial option').length;
+        if (ndatas > 2){
+           let dtinicio = $("#select_data_inicial option:selected").text();
+           let dtfinal = $("#select_data_final option:last-child"); 
+           dtfinal.attr('selected', 'selected');
+           requestAjax(dtinicio, dtfinal.text());
+        }
+
+    }
+    
+    function showGraphics(){
+        let dtinicio = $("#select_data_inicial option:selected").text();
+        let dtfinal = $("#select_data_final option:selected").text();
+        requestAjax(dtinicio, dtfinal);
+    }
+    
+    function requestAjax(dtinicio, dtfinal){
+        $.ajax({
         method: "POST",
         url: "<?= site_url('relatorio/grafico_ajax') ?>",
         data: { data_inicio: dtinicio, data_final: dtfinal }
@@ -244,7 +264,7 @@
             gerar_grafico_barra_horizontal_refeicao("refeicao", dados.graph4.label, dados.graph4.data, "Quantidade de desperdicio por refeição " ); 
             gerar_grafico_barra_horizontal_pessoas("pessoas_atendidas", dados.graph5.label, dados.graph5.data, "Quantidade pessoas atendidas " ); 
         });
-    });
+    }
 
     
 </script>

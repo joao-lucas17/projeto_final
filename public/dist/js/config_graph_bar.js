@@ -54,6 +54,7 @@ function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, la
     var ctx = document.getElementById(idElemento);
     var barra = new Chart(ctx, {
         type: 'horizontalBar',
+        responsive: true,
         data: {
             labels: labels,
             datasets: [{
