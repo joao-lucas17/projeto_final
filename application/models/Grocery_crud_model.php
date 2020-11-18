@@ -256,7 +256,8 @@ class Grocery_crud_model  extends CI_Model  {
     	if(strstr($related_field_title,'{'))
     	{
     		$related_field_title = str_replace(" ", "&nbsp;", $related_field_title);
-    		$select .= "CONCAT('".str_replace(array('{','}'),array("',COALESCE(",", ''),'"),str_replace("'","\\'",$related_field_title))."') as $field_name_hash";
+    		//$select .= "CONCAT('".str_replace(array('{','}'),array("',COALESCE(",", ''),'"),$related_field_title)."') as $field_name_hash";
+                $select .= "CONCAT('".str_replace(array('{','}'),array("',COALESCE(",", ''),'"),str_replace("'","\\'",$related_field_title))."') as $field_name_hash";
     	}
     	else
     	{
