@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="<?= base_url("public/dist/css/template-verde.css") ?>" type='text/css'/>
     <link rel="stylesheet" href="https://portal.ifs.ifsuldeminas.edu.br/templates/padraogoverno01/css/icones-bmp-verde.css" type='text/css'/>
     <link rel="stylesheet" href="<?= base_url("public/dist/css/font-awesome.min.css") ?>" type='text/css'/>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" type='text/css'/>
+    
     <!--[if lt IE 10]>
     <link rel="stylesheet" href="/templates/padraogoverno01/css/ie.css" />
     <![endif]-->
@@ -34,6 +36,7 @@
     <script src="/media/k2/assets/js/k2.frontend.js?v=2.8.0&amp;sitepath=/" type="text/javascript"></script>
     <script src="/media/jui/js/bootstrap.min.js?77f7d0b156fa3bb90e6529f9c17fe414" type="text/javascript"></script>
     <script src="https://portal.ifs.ifsuldeminas.edu.br/templates/padraogoverno01/html/mod_banners/js/banner-rotativo-home.js" type="text/javascript"></script>
+    
     <!-- Youtube Gallery Hot Video Switch -->
                 <script type="text/javascript">
     //<![CDATA[
@@ -762,10 +765,11 @@ dObj.innerHTML=description;
                                 </div>	
                                 <div class="chamadas-secundarias">
 
-
+                                    
+                                        
                                     <div class="card-body p-2" >                                     
                                         <div class="flexigrid">
-                                            <table class="table table-bordered " id="rel">
+                                            <table class="table table-bordered " id="relatorio">
                                                 <thead class="thead-dark">
                                                     <tr>
                                                         <th><div class="text-center">Dia</div></th>
@@ -794,8 +798,8 @@ dObj.innerHTML=description;
                                         </div>                              
                                     </div>
 
-
-
+                                       
+                                  
                                 </div>	
                             </div>
 
@@ -976,11 +980,11 @@ dObj.innerHTML=description;
     <script defer="defer" src="//barra.brasil.gov.br/barra.js" type="text/javascript"></script>
     <script src="<?= base_url("bootstrap/js/Chart.min.js") ?>"></script>
 
-
-    <script type="text/javascript" src="<?= base_url("bootstrap/js/jquery.dataTables.min.js") ?>"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
+    <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript">
                                             $(document).ready(function () {
-                                            $('#rel').DataTable();
+                                            $('#relatorio').DataTable();
                                             });</script>
     <script src="<?= base_url("public/dist/js/config_graph_bar.js") ?>"> </script>
     

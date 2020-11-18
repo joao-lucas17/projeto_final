@@ -58,7 +58,7 @@
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <div class="col-11">
-                                    <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada semana passada</h6>
+                                    <h6 class="m-0 font-weight-bold text-info">Valor gasto com a comida desperdiçada</h6>
                                 </div>
                                 <div class="col-2">
                                     <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -237,7 +237,7 @@
             let dados = JSON.parse(msg);
             console.log(msg);
             gerar_grafico_barra_vertical("valor_desperdicado", dados.graph2.label, dados.graph2.data, "Desperdicio em reais " ); 
-            gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph2.data, "Porcentagem de desperdício " ); 
+            gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph1.data, "Porcentagem de desperdício " ); 
             gerar_grafico_linha("peso_desperdicado", dados.graph1.label, dados.graph1.data );    
             
             

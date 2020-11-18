@@ -16,7 +16,8 @@ class Desperdicio extends CI_Controller{
         $crud = new Grocery_CRUD();
         $crud->set_table("desperdicio");
         $crud->set_subject("desperdicio");
-            
+           
+        
         $crud->set_relation("refeicao_idrefeicao", "refeicao", "dia");
         $crud->display_as("refeicao_idrefeicao", "Refeição");
         

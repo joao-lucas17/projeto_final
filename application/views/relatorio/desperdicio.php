@@ -12,14 +12,15 @@
             </div>
             <div class="card-body p-2" >                                     
                 <div class="flexigrid">
-                    <table class="table table-bordered table-striped" id="relatorio">
+                   
+                    <table class="table table-bordered table-striped" id="relatorio" name="relatorioDesperdicio">
                         <thead>
                             <tr>
                                 <th>Dia</th>
-                                <th>Tipo de Refeição</th>
+                                <th>Refeição</th>
                                 <th>Cardápio</th>
-                                <th>Quantidade de Pessoas</th>
-                                <th>Total desperdiçado</th>
+                                <th>Pessoas</th>
+                                <th>Desperdício</th>
                                 <th>Observação</th>
                             </tr>
                         </thead>
@@ -36,7 +37,11 @@
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
-                    </table>  
+                    </table>
+                      
+                         
+                    
+                   
                 </div>                              
             </div>
         </div>
@@ -47,7 +52,7 @@
 
 
 
-<script type="text/javascript" src="<?= base_url("bootstrap/js/jquery.dataTables.min.js") ?>"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(document).ready(function () {
         $('#relatorio').DataTable();
