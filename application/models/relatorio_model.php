@@ -22,7 +22,7 @@ class relatorio_model extends CI_Model {
         $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
         $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
         $this->db->group_by("dia");
-        $this->db->order_by('dia');
+        $this->db->order_by('dia', 'ASC');
         return $this->db->get("desperdicio")->result();
     }
     

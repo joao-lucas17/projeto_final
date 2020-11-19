@@ -24,10 +24,10 @@ class Relatorio extends CI_Controller {
         $dataInicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
         $dataFinal = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
         
-        $resultado = $this->relatorio_model->getDesperdicioByDate($dataInicial,$dataFinal);
+        $resultado = $this->relatorio_model->getDesperdicioByDate('','');
         $dados1 = $this->_getDataGrafico1($resultado, 'labels_bar1', 'data_bar1');        
         
-        $resultado2 = $this->relatorio_model->getDesperdicioValor($dataInicial,$dataFinal);
+        $resultado2 = $this->relatorio_model->getDesperdicioValor('','');
         $dados2 = $this->_getDataGrafico1($resultado2, 'labels_bar2', 'data_bar2');        
 //        
 	$dias["dias"] = $this->relatorio_model->getDias();   

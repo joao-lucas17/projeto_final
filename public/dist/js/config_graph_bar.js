@@ -47,8 +47,10 @@ function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
             }
         }
     });
+    
     return barra;
 }
+   
 
 function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
