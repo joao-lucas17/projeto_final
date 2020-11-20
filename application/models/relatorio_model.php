@@ -21,8 +21,8 @@ class relatorio_model extends CI_Model {
         $this->db->select("date_format(dia, '%d/%m/%Y') as dia, sum(peso) as total");
         $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
         $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
-        $this->db->group_by("dia");
-        $this->db->order_by('dia', 'ASC');
+        $this->db->group_by("refeicao.dia");
+        $this->db->order_by('refeicao.dia', 'ASC');
         return $this->db->get("desperdicio")->result();
     }
     
@@ -31,7 +31,7 @@ class relatorio_model extends CI_Model {
         $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
         $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
         $this->db->group_by("tipo");
-        $this->db->order_by('dia');
+        $this->db->order_by('refeicao.dia');
         return $this->db->get("desperdicio")->result();
     }
     
@@ -39,8 +39,8 @@ class relatorio_model extends CI_Model {
         $this->db->select("date_format(dia, '%d/%m/%Y') as dia, sum(quantidade_pessoas) as total");
         $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
         $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
-        $this->db->group_by("dia");
-        $this->db->order_by('dia');
+        $this->db->group_by("refeicao.dia");
+        $this->db->order_by('refeicao.dia');
         return $this->db->get("desperdicio")->result();
     }
     

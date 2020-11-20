@@ -16,7 +16,7 @@ class Relatorio extends CI_Controller {
     public function desperdicio() {
         $this->db->join("desperdicio", "refeicao.idrefeicao = desperdicio.refeicao_idrefeicao");
         $this->db->join("cardapio", "refeicao.cardapio_idcardapio = cardapio.idcardapio");
-        $dados["dados"] = $this->db->get("refeicao")->result();
+        $dados["dados"] = $this->db->get("refeicao")->result();        
         $this->template->load("template/adminlte/admin", "relatorio/desperdicio", $dados);
     }
     
@@ -24,7 +24,7 @@ class Relatorio extends CI_Controller {
         $dataInicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
         $dataFinal = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
         
-        $resultado = $this->relatorio_model->getDesperdicioByDate('','');
+        $resultado = $this->relatorio_model->getDesperdicioByDate('','');     
         $dados1 = $this->_getDataGrafico1($resultado, 'labels_bar1', 'data_bar1');        
         
         $resultado2 = $this->relatorio_model->getDesperdicioValor('','');
