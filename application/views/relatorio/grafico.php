@@ -74,8 +74,8 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area">            
-                                    <canvas id="valor_desperdicado" class="chartjs-size-monitor-expand"></canvas>
+                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="valor_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -103,8 +103,8 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-                                <div class="chart-area">
-                                    <canvas id="porcentagem_desperdicio"  class="chartjs-size-monitor-expand"></canvas>
+                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="porcentagem_desperdicio"  style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -133,11 +133,9 @@
                             </div>
                             <!-- Card Body -->
                             <div class="card-body">
-
-                                <div class="chart-pie pt-4 pb-2"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="peso_desperdicado" class="chartjs-size-monitor-expand"></canvas>
+                                <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="peso_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -227,6 +225,8 @@
     
     window.addEventListener('DOMContentLoaded', init, false);
 
+    var graph1, graph2, graph3, graph4, graph5; 
+    
     var btn = document.querySelector("#btn_atualiza");
     btn.addEventListener('click', showGraphics);
     
@@ -248,6 +248,16 @@
     }
     
     function requestAjax(dtinicio, dtfinal){
+        if (graph1 !== undefined){
+            graph1.destroy();
+            graph2.destroy();
+            graph3.destroy();
+            graph4.destroy();
+            graph5.destroy();
+        }
+        
+     
+        
         $.ajax({
         method: "POST",
         url: "<?= site_url('relatorio/grafico_ajax') ?>",
@@ -256,13 +266,17 @@
         .done(function( msg ) {
             let dados = JSON.parse(msg);
             console.log(msg);
-            gerar_grafico_barra_vertical("valor_desperdicado", dados.graph2.label, dados.graph2.data, "Desperdicio em reais " ); 
-            gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph1.data, "Porcentagem de desperdício " ); 
-            gerar_grafico_linha("peso_desperdicado", dados.graph1.label, dados.graph1.data );    
+            graph1 = gerar_grafico_barra_vertical("valor_desperdicado", dados.graph2.label, dados.graph2.data, "Desperdicio em reais " ); 
+            graph2 = gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph1.data, "Porcentagem de desperdício " ); 
+            graph3 =gerar_grafico_linha("peso_desperdicado", dados.graph1.label, dados.graph1.data );                            
+            graph4 = gerar_grafico_barra_horizontal_refeicao("refeicao", dados.graph4.label, dados.graph4.data, "Quantidade de desperdicio por refeição " ); 
+            graph5 =gerar_grafico_barra_horizontal_pessoas("pessoas_atendidas", dados.graph5.label, dados.graph5.data, "Quantidade pessoas atendidas " ); 
             
-            
-            gerar_grafico_barra_horizontal_refeicao("refeicao", dados.graph4.label, dados.graph4.data, "Quantidade de desperdicio por refeição " ); 
-            gerar_grafico_barra_horizontal_pessoas("pessoas_atendidas", dados.graph5.label, dados.graph5.data, "Quantidade pessoas atendidas " ); 
+            graph1.update();
+            graph2.update();
+            graph3.update();
+            graph4.update();
+            graph5.update();
         });
     }
 

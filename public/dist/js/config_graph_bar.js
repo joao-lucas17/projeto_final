@@ -6,7 +6,7 @@
 
 function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
-    var barra = new Chart(ctx, {
+    let barra = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,

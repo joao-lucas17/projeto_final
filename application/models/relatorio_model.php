@@ -36,7 +36,7 @@ class relatorio_model extends CI_Model {
     }
     
     public function getPessoasAtendidasPorDia($inicio, $final){
-        $this->db->select("concat(day(dia),'/', month(dia),'/',year(dia)) as dia, sum(quantidade_pessoas) as total");
+        $this->db->select("date_format(dia, '%d/%m/%Y') as dia, sum(quantidade_pessoas) as total");
         $this->db->join("refeicao", "desperdicio.refeicao_idrefeicao = refeicao.idrefeicao");
         $this->db->where( "dia BETWEEN '$inicio' AND '$final'", NULL, FALSE );        
         $this->db->group_by("dia");
