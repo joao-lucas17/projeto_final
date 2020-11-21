@@ -22,6 +22,9 @@ class Relatorio extends CI_Controller {
     
     public function grafico(){
      
+        $dataInicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
+        $dataFinal = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
+        
         $resultado = $this->relatorio_model->getDesperdicioByDate('','');     
         $dados1 = $this->_getDataGrafico1($resultado, 'labels_bar1', 'data_bar1');        
         
@@ -29,8 +32,10 @@ class Relatorio extends CI_Controller {
         $dados2 = $this->_getDataGrafico1($resultado2, 'labels_bar2', 'data_bar2');        
 //        
 	$dias["dias"] = $this->relatorio_model->getDias();   
-        
-        $dados3 = array_merge($dados1, $dados2, $dias );
+               
+        $porcentagens["dados"] = $this->relatorio_model->getPorcetagemDesperdicio($dataInicial, $dataFinal);
+
+        $dados3 = array_merge($dados1, $dados2, $dias, $porcentagens);
         $this->template->load("template/adminlte/admin", "relatorio/grafico", $dados3);
     }
     
@@ -78,8 +83,12 @@ class Relatorio extends CI_Controller {
        return $result;
     }
     
-    public function teste(){            
-        return $this->relatorio_model->getPorcetagemDesperdicio("18/09/2020", "22/09/2020");
+    public function teste(){
+        $data_inicial = implode('-', array_reverse(explode('/', "18/09/2020")));
+        $data_final = implode('-', array_reverse(explode('/', "22/09/2020")));
+        
+        $porcentagens["dados"] = $this->relatorio_model->getPorcetagemDesperdicio($data_inicial, $data_final);
+        return var_dump($porcentagens);
     }
     
 
