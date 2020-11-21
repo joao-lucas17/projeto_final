@@ -21,9 +21,7 @@ class Relatorio extends CI_Controller {
     }
     
     public function grafico(){
-        $dataInicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
-        $dataFinal = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
-        
+     
         $resultado = $this->relatorio_model->getDesperdicioByDate('','');     
         $dados1 = $this->_getDataGrafico1($resultado, 'labels_bar1', 'data_bar1');        
         
@@ -80,15 +78,8 @@ class Relatorio extends CI_Controller {
        return $result;
     }
     
-    public function _teste(){   
-        $data_Inicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
-        $data_Final = implode("-", array_reverse(explode("/", $this->input->post('data_final'))));
-        
-        $dataInicial = implode('-', array_reverse(explode('/', $data_Inicial)));
-        $dataFinal = implode('-', array_reverse(explode('/', $data_Final)));
-        
-       
-        return $this->relatorio_model->getPorcetagemDesperdicio($dataInicial, $dataFinal);
+    public function teste(){            
+        return $this->relatorio_model->getPorcetagemDesperdicio("18/09/2020", "22/09/2020");
     }
     
 

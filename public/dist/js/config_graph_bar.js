@@ -55,6 +55,7 @@ function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
 function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
     var barra = new Chart(ctx, {
+        tooltipTemplate: '<%= value + "%" %>',
         type: 'horizontalBar',
         responsive: true,
         data: {
@@ -79,14 +80,23 @@ function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, la
                                 return value + "%";
                             },
                             beginAtZero: true,
-                            
                         },
                         
-                    }]
+                    }],
+               
             },
             legend: {
                 display: false,
             },
+            tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                     return "Porcentagem desperdiçada " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' %';
+                }
+            }
+
+        }
+            
         }
     });
     return barra;
