@@ -91,7 +91,7 @@ function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, la
             tooltips: {
             callbacks: {
                 label: function(tooltipItem, data) {
-                     return "Porcentagem desperdiçada " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' %';
+                     return "Porcentagem desperdiçada " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
                 }
             }
 
