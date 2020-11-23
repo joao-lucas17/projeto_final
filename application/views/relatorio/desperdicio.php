@@ -10,9 +10,10 @@
                 </div>
                 		              
             </div>
+            
             <div class="card-body p-2" >                                     
                 <div class="flexigrid">
-                   
+                    <div class="print" class="conteudo">
                     <table class="table table-bordered table-striped" id="relatorio" name="relatorioDesperdicio">
                         <thead>
                             <tr>
@@ -38,10 +39,10 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                      
-                         
+                    <input type="submit" onclick="window.print();" value="imprimir">
+                    </div>
                     
-                   
+                     
                 </div>                              
             </div>
         </div>
@@ -58,3 +59,4 @@
         $('#relatorio').DataTable();
     });
 </script>
+

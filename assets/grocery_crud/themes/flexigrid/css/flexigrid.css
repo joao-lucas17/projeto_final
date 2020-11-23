@@ -188,7 +188,7 @@ table th
 .flexigrid div.fbutton {
 	float:left;
 	display:block;
-	cursor:pointer;
+	cursor: pointer;
 	padding:1px;
 }
 .flexigrid div.fbutton div {
