@@ -65,10 +65,7 @@
                                         <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Fazer Download:</div>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_png.png") ?>" class="img-icone"/>PNG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_jpg.png") ?>" class="img-icone"/>JPG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_gif.png") ?>" class="img-icone"/>GIF</a>
+                                        <a class="dropdown-item" href="#" id="download1" download="Valor_gasto.png"><i class="fa fa-download"></i>        PNG</a>
                                     </div>
                                 </div>
                             </div>
@@ -94,10 +91,7 @@
                                         <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Fazer Download:</div>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_png.png") ?>" class="img-icone"/>PNG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_jpg.png") ?>" class="img-icone"/>JPG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_gif.png") ?>" class="img-icone"/>GIF</a>
+                                        <a class="dropdown-item" href="#" id="download2" download="Porcentagem_desperdicada.png"><i class="fa fa-download"></i>        PNG</a>
                                     </div>
                                 </div>
                             </div>
@@ -124,10 +118,7 @@
                                         <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Formas de Download:</div>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_png.png") ?>" class="img-icone"/>PNG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_jpg.png") ?>" class="img-icone"/>JPG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_gif.png") ?>" class="img-icone"/>GIF</a>
+                                        <a class="dropdown-item" href="#" id="download3" download="Peso_desperdicado.png"><i class="fa fa-download"></i>        PNG</a>
                                     </div>
                                 </div>
                             </div>
@@ -153,10 +144,7 @@
                                         <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Fazer Download:</div>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_png.png") ?>" class="img-icone"/>PNG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_jpg.png") ?>" class="img-icone"/>JPG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_gif.png") ?>" class="img-icone"/>GIF</a>
+                                        <a class="dropdown-item" href="#" id="download4" download="Desperdicio_refeicao.png"><i class="fa fa-download"></i>        PNG</a>
                                     </div>
                                 </div>
                             </div>
@@ -182,10 +170,7 @@
                                         <i class="fas fa-bars fa-sm fa-fw text-gray-400"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
-                                        <div class="dropdown-header">Fazer Download:</div>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_png.png") ?>" class="img-icone"/>PNG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_jpg.png") ?>" class="img-icone"/>JPG</a>
-                                        <a class="dropdown-item" href="#"><img src="<?= base_url("bootstrap/img/arquivo_gif.png") ?>" class="img-icone"/>GIF</a>
+                                        <a class="dropdown-item" href="#" id="download5" download="Qtd_pessoas.png"><i class="fa fa-download"></i>        PNG</a>
                                     </div>
                                 </div>
                             </div>
@@ -283,4 +268,41 @@
     
 </script>
 
+<script>
+    document.getElementById("download1").addEventListener('click', function(){
+        var url_base64jp = document.getElementById("valor_desperdicado").toDataURL("image/jpg");
+        var a =  document.getElementById("download1");
+        a.href = url_base64jp;
+    });
+    
+    
+    document.getElementById("download2").addEventListener('click', function(){
+        var url_base64jp = document.getElementById("porcentagem_desperdicio").toDataURL("image/jpg");
+        var a =  document.getElementById("download2");
+        a.href = url_base64jp;
+    });
+    
+    
+    document.getElementById("download3").addEventListener('click', function(){
+        var url_base64jp = document.getElementById("peso_desperdicado").toDataURL("image/jpg");
+        var a =  document.getElementById("download3");
+        a.href = url_base64jp;
+    });
+    
+    
+    document.getElementById("download4").addEventListener('click', function(){
+        var url_base64jp = document.getElementById("refeicao").toDataURL("image/jpg");
+        var a =  document.getElementById("download4");
+        a.href = url_base64jp;
+    });
+    
+    
+    document.getElementById("download5").addEventListener('click', function(){
+        var url_base64jp = document.getElementById("pessoas_atendidas").toDataURL("image/jpg");
+        var a =  document.getElementById("download5");
+        a.href = url_base64jp;
+    });
+    
+    
+</script>
 
