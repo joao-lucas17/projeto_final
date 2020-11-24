@@ -103,14 +103,14 @@ function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, la
 }
 
 
-function gerar_grafico_linha(idElemento, labels, data) {
+function gerar_grafico_linha(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
     var linha = new Chart(ctx, {
         type: 'line',
         data: {
             labels: labels,
             datasets: [{
-                    label: "Desperdício alimentar",
+                    label: label,
                     data: data,
                     lineTension: 0.3,
                     backgroundColor: 'rgba(0,153,198,0.31)',
@@ -130,7 +130,15 @@ function gerar_grafico_linha(idElemento, labels, data) {
             },
             legend: {
                 display: false,
+            },
+            tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                     return "Desperdício alimentar " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' kg';
+                }
             }
+
+        }
         }
     });
     return linha;
@@ -165,6 +173,14 @@ function gerar_grafico_barra_horizontal_refeicao(idElemento, labels, data, label
             legend: {
                 display: false,
             },
+            tooltips: {
+            callbacks: {
+                label: function(tooltipItem, data) {
+                     return "Desperdicio por refeição" + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' kg';
+                }
+            }
+
+        }
         }
     });
     return barra;
