@@ -34,13 +34,9 @@
         <div class="wrapper">
             <!-- Navbar -->
             <?php include "navbar.php" ?>
-
-            <!-- Main Sidebar Container -->
-            <?php include "sidebar.php" ?>
-
-
+          
             <!-- Content Wrapper. Contains page content -->
-            <div class="content-wrapper">
+            <div class="">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <div class="container-fluid">
@@ -63,12 +59,7 @@
                 </section>
             </div>
             <!-- /.content-wrapper -->
-
-            <!-- Footer -->
-            <?php include "footer.php" ?>
-
-            <!-- Control Sidebar -->
-            <?php include "control_side.php" ?>
+            
             <!-- /.control-sidebar -->
         </div>
         <!-- ./wrapper -->

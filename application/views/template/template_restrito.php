@@ -12,7 +12,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
 
     <!-- Bootstrap core CSS -->
-    <link href="<?= base_url("bootstrap/css/bootstrap.min.css") ?>" rel="stylesheet" >
+    <link href="<?= base_url("bootstrap/css/bootstrap.min.css") ?>" rel="stylesheet">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/4.5/assets/img/favicons/apple-touch-icon.png" sizes="180x180">

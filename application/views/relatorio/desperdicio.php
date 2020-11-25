@@ -39,7 +39,7 @@
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    <input type="submit" onclick="window.print();" value="imprimir">
+                    
                     </div>
                     
                      
@@ -53,10 +53,5 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#relatorio').DataTable();
-    });
-</script>
+
 

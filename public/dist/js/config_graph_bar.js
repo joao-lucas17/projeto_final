@@ -39,7 +39,7 @@ function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
                 callbacks: {
                     label: function (tooltipItem, data) {
                         var label = data.datasets[tooltipItem.datasetIndex].label || '';
-                        label += " " ;
+                        label += " ";
                         label += tooltipItem.yLabel.toLocaleString("pt-BR", {style: "currency", currency: "BRL"});
                         return label;
                     }
@@ -47,10 +47,10 @@ function gerar_grafico_barra_vertical(idElemento, labels, data, label) {
             }
         }
     });
-    
+
     return barra;
 }
-   
+
 
 function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, label) {
     var ctx = document.getElementById(idElemento);
@@ -75,28 +75,27 @@ function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, la
             scales: {
                 xAxes: [{
                         ticks: {
-                            max: 300,
-                            callback: function(value) {
+                            callback: function (value) {
                                 return value + "%";
                             },
                             beginAtZero: true,
                         },
-                        
+
                     }],
-               
+
             },
             legend: {
                 display: false,
             },
             tooltips: {
-            callbacks: {
-                label: function(tooltipItem, data) {
-                     return "Porcentagem desperdiçada " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+                callbacks: {
+                    label: function (tooltipItem, data) {
+                        return "Porcentagem desperdiçada " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + '%';
+                    }
                 }
+
             }
 
-        }
-            
         }
     });
     return barra;
@@ -132,13 +131,13 @@ function gerar_grafico_linha(idElemento, labels, data, label) {
                 display: false,
             },
             tooltips: {
-            callbacks: {
-                label: function(tooltipItem, data) {
-                     return "Desperdício alimentar " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' kg';
+                callbacks: {
+                    label: function (tooltipItem, data) {
+                        return "Desperdício alimentar " + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' kg';
+                    }
                 }
-            }
 
-        }
+            }
         }
     });
     return linha;
@@ -163,10 +162,9 @@ function gerar_grafico_barra_horizontal_refeicao(idElemento, labels, data, label
         },
         options: {
             scales: {
-                xAxes: [{
+                yAxes: [{
                         ticks: {
                             beginAtZero: true,
-                            
                         }
                     }]
             },
@@ -174,13 +172,13 @@ function gerar_grafico_barra_horizontal_refeicao(idElemento, labels, data, label
                 display: false,
             },
             tooltips: {
-            callbacks: {
-                label: function(tooltipItem, data) {
-                     return "Desperdicio por refeição" + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' kg';
+                callbacks: {
+                    label: function (tooltipItem, data) {
+                        return "Desperdicio por refeição" + ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index] + ' kg';
+                    }
                 }
-            }
 
-        }
+            }
         }
     });
     return barra;
@@ -208,7 +206,7 @@ function gerar_grafico_barra_horizontal_pessoas(idElemento, labels, data, label)
                 xAxes: [{
                         ticks: {
                             beginAtZero: true,
-                            
+
                         }
                     }]
             },

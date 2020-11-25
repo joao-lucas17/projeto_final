@@ -61,16 +61,17 @@ class relatorio_model extends CI_Model {
     }
     
     public function getPorcetagemDesperdicio($dataInicial, $dataFinal){
-        $query = $this->db->query("select dia, round(peso / total_desperdicado * 100, 2) as porcem from (
-                    select dia, peso, total_desperdicado from desperdicio,  (
-                    select sum(peso) as total_desperdicado from desperdicio
-                    inner join refeicao on desperdicio.refeicao_idrefeicao = refeicao.idrefeicao
-                    where dia between '$dataInicial' and '$dataFinal') t, refeicao
-                    where refeicao_idrefeicao = refeicao.idrefeicao and
-                    dia between '$dataInicial' and '$dataFinal'
-                    group by dia
-                    ) t");
-        return $query->result_array();
+        $query = $this->db->query("
+        select date_format(dia, '%d/%m/%Y') as dia, round(desperdicio_dia / total_desperdicado * 100, 2) as total from 
+            ((select sum(peso) as total_desperdicado from desperdicio
+             inner join refeicao on desperdicio.refeicao_idrefeicao = refeicao.idrefeicao
+             where dia between '$dataInicial' and '$dataFinal') desperdicio_total),
+    
+            ((select sum(peso) as desperdicio_dia, dia from desperdicio
+            inner join refeicao on desperdicio.refeicao_idrefeicao = refeicao.idrefeicao
+            where dia between '$dataInicial' and '$dataFinal' group by dia order by dia) desperdicio_dia)	         
+        ");
+        return $query->result();
     }
 
 }
