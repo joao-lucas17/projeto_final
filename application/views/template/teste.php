@@ -595,7 +595,7 @@ dObj.innerHTML=description;
                             <li class="item-132"><a href="/index.php/contato" >Contato</a></li>
                             <li class="item-288"><a href="https://portal.ifs.ifsuldeminas.edu.br/index.php/nti/sistemas-solucoes" >Acesso a Sistemas</a></li>
                             <li class="item-341"><a href="https://portal.ifsuldeminas.edu.br/index.php/ouvidoria" target="_blank" rel="noopener noreferrer">Ouvidoria</a></li>
-                            <li class="item-132"><a href="<?= site_url("relatorio/desperdicio") ?>" >Relatório do Desperdício</a></li>
+                            <li class="item-132"><a href="<?= site_url("relatorio/graficos") ?>" >Relatório do Desperdício</a></li>
                             <li class="item-132"><a href="<?= site_url("login/index") ?>" >Acesso Restrito Nutriif</a></li>
                         </ul>
                         <span class="hide">Fim do menu de serviços</span>

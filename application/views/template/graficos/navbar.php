@@ -12,6 +12,10 @@
             <a href="<?= site_url("relatorio/graficos")?>" class="nav-link">Gráficos</a>
         </li>
         
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="<?= site_url("Slide_graficos/graficos_slide")?>" class="nav-link">Slides</a>
+        </li>
+        
          <li class="nav-item d-none d-sm-inline-block">
             <a href="<?= site_url("relatorio/desperdicios")?>" class="nav-link">Relatório</a>
         </li>

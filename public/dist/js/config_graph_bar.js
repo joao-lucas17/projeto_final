@@ -102,14 +102,14 @@ function gerar_grafico_barra_horizontal_porcentagem(idElemento, labels, data, la
 }
 
 
-function gerar_grafico_linha(idElemento, labels, data, label) {
+function gerar_grafico_linha(idElemento, labels, data) {
     var ctx = document.getElementById(idElemento);
     var linha = new Chart(ctx, {
         type: 'line',
         data: {
             labels: labels,
             datasets: [{
-                    label: label,
+                    label: "Desperdício por peso",
                     data: data,
                     lineTension: 0.3,
                     backgroundColor: 'rgba(0,153,198,0.31)',
@@ -128,7 +128,7 @@ function gerar_grafico_linha(idElemento, labels, data, label) {
                     }]
             },
             legend: {
-                display: false,
+                display: true,
             },
             tooltips: {
                 callbacks: {
@@ -169,7 +169,7 @@ function gerar_grafico_barra_horizontal_refeicao(idElemento, labels, data, label
                     }]
             },
             legend: {
-                display: false,
+                display: true,
             },
             tooltips: {
                 callbacks: {

@@ -7,10 +7,7 @@
                         <h5 class="card-title m-0">Gráfico de desperdício</h5>  
                     </div>
                     <div class="col-2">                        
-                        <div class="btn-group">
-                            <button class="btn btn-sm btn-outline-secondary">Compartilhar</button>
-                            <button class="btn btn-sm btn-outline-secondary">Exportar</button>
-                        </div>                   
+                                         
                     </div>
                 </div>                		              
             </div>
@@ -254,7 +251,7 @@
     console.log(dados.graph4);
             graph1 = gerar_grafico_barra_vertical("valor_desperdicado", dados.graph1.label, dados.graph1.data, "Desperdicio em reais " ); 
             graph2 = gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph2.data, "Porcentagem de desperdício " ); 
-            graph3 =gerar_grafico_linha("peso_desperdicado", dados.graph3.label, dados.graph3.data );                            
+            graph3 =gerar_grafico_linha("peso_desperdicado", dados.graph3.label, dados.graph3.data, "Desperdício por peso" );                            
             graph4 = gerar_grafico_barra_horizontal_refeicao("refeicao", dados.graph4.label, dados.graph4.data, "Desperdicio por refeição " ); 
             graph5 =gerar_grafico_barra_horizontal_pessoas("pessoas_atendidas", dados.graph5.label, dados.graph5.data, "Quantidade pessoas atendidas " ); 
             
