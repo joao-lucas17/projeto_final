@@ -29,6 +29,11 @@ class Relatorio extends CI_Controller {
         $this->template->load("template/graficos/graficos", "relatorio/desperdicio", $dados);
     }
 
+    public function graficos_slide() {
+        $dados3 = $this->consultaInicial();
+        $this->template->load("template/graficos/graficos", "relatorio/slide_grafico", $dados3);
+    }
+    
      public function graficos() {
          $dados3 = $this->consultaInicial();
         $this->template->load("template/graficos/graficos", "relatorio/grafico", $dados3);
