@@ -8,31 +8,23 @@
             <a href="<?= site_url("site/index")?>" class="nav-link">Home</a>
         </li>
         
-         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?= site_url("relatorio/graficos")?>" class="nav-link">Gráficos</a>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="<?= site_url("Graficos_publicos/desperdicios")?>" class="nav-link">Relatório</a>
         </li>
         
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?= site_url("Slide_graficos/graficos_slide")?>" class="nav-link">Slides</a>
+            <a href="<?= site_url("Graficos_publicos/graficos")?>" class="nav-link">Gráficos</a>
         </li>
         
-         <li class="nav-item d-none d-sm-inline-block">
-            <a href="<?= site_url("relatorio/desperdicios")?>" class="nav-link">Relatório</a>
+        <li class="nav-item d-none d-sm-inline-block">
+            <a href="<?= site_url("Graficos_publicos/grafico_slide")?>" class="nav-link">Slides</a>
         </li>
+        
         
     </ul>
 
     <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-        <div class="input-group input-group-sm">
-            <input class="form-control form-control-navbar" type="search" placeholder="Pesquisar" aria-label="Search">
-            <div class="input-group-append">
-                <button class="btn btn-navbar" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
-        </div>
-    </form>
+    
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">

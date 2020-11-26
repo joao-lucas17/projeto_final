@@ -14,30 +14,25 @@ class Relatorio extends CI_Controller {
         $this->template->set("submenu", "Desperdicio");
     }
 
-    function getDadosRelatorioDesperdicio(){
+    public function getDadosRelatorioDesperdicio(){
         $this->db->join("desperdicio", "refeicao.idrefeicao = desperdicio.refeicao_idrefeicao");
         $this->db->join("cardapio", "refeicao.cardapio_idcardapio = cardapio.idcardapio");
         return $this->db->get("refeicao")->result();
     }
+    
     public function desperdicio() {
         $dados["dados"] = $this->getDadosRelatorioDesperdicio();
         $this->template->load("template/adminlte/admin", "relatorio/desperdicio", $dados);
     }
     
-    public function desperdicios() {
-        $dados["dados"] = $this->getDadosRelatorioDesperdicio();
-        $this->template->load("template/graficos/graficos", "relatorio/desperdicio", $dados);
-    }
+   
 
     public function graficos_slide() {
         $dados3 = $this->consultaInicial();
         $this->template->load("template/graficos/graficos", "relatorio/slide_grafico", $dados3);
     }
     
-     public function graficos() {
-         $dados3 = $this->consultaInicial();
-        $this->template->load("template/graficos/graficos", "relatorio/grafico", $dados3);
-     }
+     
      
      public function consultaInicial(){
          $dataInicial = implode("-", array_reverse(explode("/", $this->input->post('data_inicio'))));
@@ -59,7 +54,7 @@ class Relatorio extends CI_Controller {
     
     public function grafico() {
         $dados3 = $this->consultaInicial();
-        $this->template->load("template/adminlte/admin", "relatorio/grafico", $dados3);
+        $this->template->load("template/adminlte/admin", "relatorio/grafico_restrito", $dados3);
     }
 
     function grafico_ajax() {

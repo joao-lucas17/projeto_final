@@ -1,10 +1,21 @@
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <!--                    gráfico de barras-->
-        <div class="card-body p-2" >  
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card card-info card-outline">
+            <div class="card-header pt-1 pb-1">
+                <div class="row align-items-center">
+                    <div class="col-10">
+                        <h5 class="card-title m-0">Gráfico de desperdício</h5>  
+                    </div>
+                    <div class="col-2">                        
+                                         
+                    </div>
+                </div>                		              
+            </div>
+
+
+            <div class="card-body p-2" >  
                 
-                <form class="form-inline" method="post" action="<?= site_url("Graficos_publicos/graficos") ?>">
+                <form class="form-inline" method="post" action="<?= site_url("relatorio/grafico") ?>">
                         <div class="form-group mb-2 col-md-4">
                             <label for="select_data_inicial" class="">Data Inicial: </label>
                             <select name="campo_dias_inicial" class="custom-select ml-2 col-8" id="select_data_inicial">
@@ -35,9 +46,11 @@
                
                 
                 
-
-            </div>
-                    <div class="col-lg-12">
+<!--                ínicio dos gráficos -->
+                <div class="row">
+                    
+<!--                    gráfico de barras-->
+                    <div class="col-sm-6">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -56,15 +69,14 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="valor_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-size-monitor-expand"></canvas>
+                                    <canvas id="valor_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-    </div>
-    <div class="carousel-item">
-      <!--                    gráfico de pizza-->
-                    <div class="col-lg-12">
+
+<!--                    gráfico de pizza-->
+                    <div class="col-sm-6">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -88,9 +100,9 @@
                             </div>
                         </div>
                     </div>
-    </div>
-    <div class="carousel-item">
-    <!--                    gráfico de área - linhas-->
+
+
+<!--                    gráfico de área - linhas-->
                     <div class="col-lg-12">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
@@ -115,10 +127,9 @@
                             </div>
                         </div>
                     </div>
-    </div>
-      <div class="carousel-item">
-     <!--                    gráfico de barras-->
-                    <div class="col-lg-12">
+
+<!--                    gráfico de barras-->
+                    <div class="col-sm-6">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -137,15 +148,14 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="refeicao" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-size-monitor-expand"></canvas>
+                                    <canvas id="refeicao" class="chartjs-size-monitor-expand"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-    </div>
-      <div class="carousel-item">
-     <!--                    gráfico de barras-->
-                    <div class="col-lg-12">
+
+<!--                    gráfico de barras-->
+                    <div class="col-sm-6">
                         <div class="card shadow mb-4">
                             <!-- Card Header - Dropdown -->
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -164,15 +174,18 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="pessoas_atendidas" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-size-monitor-expand"></canvas>
+                                    <canvas id="pessoas_atendidas" class="chartjs-size-monitor-expand"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-    </div>
-  </div>
-</div>
 
+                </div> 
+<!--final dos gráficos-->
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Graphs -->
 <script src="<?= base_url("bootstrap/js/Chart.min.js") ?>"></script>
@@ -238,7 +251,7 @@
     console.log(dados.graph4);
             graph1 = gerar_grafico_barra_vertical("valor_desperdicado", dados.graph1.label, dados.graph1.data, "Desperdicio em reais " ); 
             graph2 = gerar_grafico_barra_horizontal_porcentagem("porcentagem_desperdicio", dados.graph2.label, dados.graph2.data, "Porcentagem de desperdício " ); 
-            graph3 =gerar_grafico_linha("peso_desperdicado", dados.graph3.label, dados.graph3.data );                            
+            graph3 =gerar_grafico_linha("peso_desperdicado", dados.graph3.label, dados.graph3.data, "Desperdício por peso" );                            
             graph4 = gerar_grafico_barra_horizontal_refeicao("refeicao", dados.graph4.label, dados.graph4.data, "Desperdicio por refeição " ); 
             graph5 =gerar_grafico_barra_horizontal_pessoas("pessoas_atendidas", dados.graph5.label, dados.graph5.data, "Quantidade pessoas atendidas " ); 
             
