@@ -69,7 +69,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="valor_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
+                                    <canvas id="valor_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-size-monitor-expand"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="porcentagem_desperdicio"  style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
+                                    <canvas id="porcentagem_desperdicio"  style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-size-monitor-expand"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="peso_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-render-monitor"></canvas>
+                                    <canvas id="peso_desperdicado" style="display: block; width: 273px; height: 220px;" width="273" height="120" class="chartjs-size-monitor-expand"></canvas>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,8 @@
 $(document).ready(function() {
     var table = $('#relatorio').DataTable( {
         lengthChange: false,
-        buttons: [ 'excel', 'pdf', 'colvis' ]
+        buttons: [ 'csv', 'excel', 'pdf', {extend: 'colvis',
+                collectionLayout: 'fixed two-column'}, 'print']
     } );
  
     table.buttons().container()

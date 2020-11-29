@@ -125,6 +125,11 @@ function gerar_grafico_linha(idElemento, labels, data) {
                         ticks: {
                             beginAtZero: true
                         }
+                    }],
+                xAxes: [{
+                        ticks: {
+                            fontSize: 15
+                        }
                     }]
             },
             legend: {
@@ -164,12 +169,18 @@ function gerar_grafico_barra_horizontal_refeicao(idElemento, labels, data, label
             scales: {
                 yAxes: [{
                         ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                xAxes: [{
+                        ticks: {
                             beginAtZero: true,
+                            fontSize: 30
                         }
                     }]
             },
             legend: {
-                display: true,
+                display: false,
             },
             tooltips: {
                 callbacks: {
