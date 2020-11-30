@@ -54,11 +54,7 @@
                         </form>
 
                     </div>
-                    <div class="card-footer">
-                        <div class="link-login">
-                            <a href="<?= site_url("login/recuperarSenha") ?>">Esqueci minha senha</a>
-                        </div>
-                    </div><br>
+                    
 
                 </div>
             </div>

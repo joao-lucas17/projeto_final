@@ -803,79 +803,8 @@ dObj.innerHTML=description;
                                 </div>	
                             </div>
 
-                            <div class="row-fluid variacao-module-04">
-
-                                <div class="variacao-module-04 noticias-acontece-no-campus module span6 variacao-module-00">
-                                    <div class="outstanding-header">				
-                                        <h2 class="outstanding-title">Gasto médio com a comida desperdiçada</h2>
-
-                                    </div>
-
-                                    <canvas id="barra" style="display: block; width: 213px; height: 120px;" width="173" height="126" class="chartjs-render-monitor"></canvas>
-                                    <div class="outstanding-footer">
-                                        <a href="https://portal.ifs.ifsuldeminas.edu.br/index.php/component/content/category/82-acontece-no-campus" class="outstanding-link">
-                                            
-                                        </a>	
-                                    </div>
-
-
-
-
-                                </div>
-                                <div class="module span6">
-                                    <div class="outstanding-header">				
-                                        <h2 class="outstanding-title">Porcentagem de desperdício por dia</h2>
-                                    </div>
-
-                                <canvas id="pizza" style="display: block; width: 213px; height: 120px;" width="173" height="126" class="chartjs-render-monitor"></canvas>
-
-                                    
-
-
-                                    <div class="outstanding-footer">
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-                            <div class="row-fluid variacao-module-04">
-
-                                <div class="module span12">
-                                    <div class="outstanding-header">				
-                                        <h2 class="outstanding-title">Desperdício alimentar por peso em quilos</h2>
-
-                                    </div>
-
-
-                                    <!-- Começo Gráfico do peso -->
-                                    
-
-                                    <canvas id="linha" style="display: block; width: 213px; height: 120px;" width="173" height="76" class="chartjs-render-monitor"></canvas>
-
-                                    <!-- Final do gráfico do peso -->
-                                    <script language="JavaScript">
-                                        //<![CDATA[
-                                        window.onresize = function() { YoutubeGalleryAutoResizePlayer1(); }
-                                        //]]>
-                                    </script>
-
-
-                                    <div class="outstanding-footer">
-                                        <a href="https://www.youtube.com/channel/UCpgeZdVGTOMm7NyV9MvFALw" class="outstanding-link"><span class="text">Acesse o nosso canal</span>
-                                            <span class="icon-box">                                          
-                                                <i class="icon-angle-right icon-light"><span class="hide">&nbsp;</span></i>
-                                            </span>
-                                        </a>
-
-                                    </div>
-
-
-                                </div>
-
-                            </div>
-
+                            
+                            
 
 
                             <span class="hide">Fim do conteúdo da página</span>
