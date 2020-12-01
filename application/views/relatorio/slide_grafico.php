@@ -83,7 +83,7 @@
                             <!-- Card Body -->
                             <div class="card-body">
                                 <div class="chart-area"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
-                                    <canvas id="porcentagem_desperdicio" width="95" height="41" class="chartjs-size-monitor-expand"></canvas>
+                                    <canvas id="porcentagem_desperdicio" width="94" height="39" class="chartjs-size-monitor-expand"></canvas>
                                 </div>
                             </div>
                         </div>
