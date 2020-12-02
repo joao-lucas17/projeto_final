@@ -1,65 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
     <head>
-        <title>Login</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Área restrita</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="<?= base_url("bootstrap/css/bootstrap.min.css") ?>">      
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="<?= base_url("public") ?>/plugins/fontawesome-free/css/all.min.css">
+        <link rel="sortcut icon" href="<?= base_url("bootstrap/img/logo_guia2.png") ?>" type="image/jpg" />
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+       <link rel="stylesheet" type="text/css" href="" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">    
         <link rel="stylesheet" href="<?= base_url("bootstrap/css/login.css") ?>">
         <link rel="sortcut icon" href="<?= base_url("bootstrap/img/logo_guia2.png") ?>" type="image/jpg" />
+        <script src="<?= base_url("bootstrap/js/jquery-3.5.1.slim.min.js") ?>"></script>
         <script src="<?= base_url("bootstrap/js/jquery.mask.min.js") ?>"></script>
         <script src="<?= base_url("bootstrap/js/popper.min.js") ?>"></script>
-
-
     </head>
 
     <body>
         <div class="container">
 
-            <div class="d-flex justify-content-center h-100"><br>
-
-                <div class="login">
-
-                    <div class="card-header">
-                        <center><img src="<?= base_url("bootstrap/img/logo_login3.png") ?>" class="logo-login"></center>
-                    </div>
-
-                    <div class="card-body">
-                        <form method="post" action="<?= site_url("login/entrar") ?>" name="novo">
+            <div class="row">
+                <div class="col-4 offset-4 painel mt-5">
+                    
+                    <center><img src="<?= base_url("bootstrap/img/logo_login.png") ?>"></center>
+                    
+                    <form method="post" action="<?= site_url("login/entrar") ?>" name="novo">
 
                             <?php if ($this->session->flashdata("danger")) : ?>
                                 <p class="alert alert-danger"><?= $this->session->flashdata("danger", "Erro ao logar") ?></p>
                             <?php endif ?>
 
-
-                            <div class="input-group form-group">
-
-                                <div class="fundo_icone">
-                                    <img src="<?= base_url("bootstrap/img/user.png") ?>" class="icone">
-                                </div>
-                                <input type="text" name="login1" class="form-control" minlength="14" maxlength="14" onkeypress="$(this - > input - > post(this)).mask('000.000.000-00');" placeholder="Insira seu CPF">
-
+                            <label class="" for="login">CPF</label>
+                            <div class="input-group mb-2 mr-sm-2">                              
+                              <input type="text" class="form-control" name="login1" id="login" placeholder="Digite seu CPF">
+                              <div class="input-group-append">
+                                <div class="input-group-text"><i class="fas fa-user"></i></div>
+                              </div>
                             </div>
-
-                            <div class="input-group form-group">
-                                <div class="fundo_icone">
-                                    <img src="<?= base_url("bootstrap/img/password.png") ?>" class="icone">
-                                </div>
-                                <input type="password" name="senha1" class="form-control" placeholder="Insira sua senha">
-                            </div>
+                             
+                            <label class="" for="senha">Senha</label>
+                            <div class="input-group mb-2 mr-sm-2">                              
+                              <input type="password" class="form-control" name="senha1" id="senha" placeholder="Digite sua senha">
+                              <div class="input-group-append">
+                                <div class="input-group-text"><i class="fas fa-lock"></i></div>
+                              </div>
+                            </div> 
+                                                                                                                                                                                               
                             <div class="form-group">
-
-                                <input type="submit" value="ENTRAR" class="login_btn">
+                                <center><input type="submit" value="Entrar" class="btn btn-warning btn_login"></center>
                             </div>
-
                         </form>
-
-                    </div>
-                    
-
                 </div>
             </div>
-
-
-        </div>
+            
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#login').mask('000.000.000-00');
+                });
+            </script>                            
     </body>
 </html>
