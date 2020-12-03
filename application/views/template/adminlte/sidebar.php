@@ -3,7 +3,7 @@
      <style>
             .img-logo{
                 width: 60px;
-                margin-right: 15px;
+                margin-left: 15px;
             }
             
             .img-icone{
@@ -12,11 +12,9 @@
         </style>
     
     <a href="<?= site_url() ?>" class="brand-link">
-        <img src="<?= base_url("bootstrap/img/logo_guia.png") ?>"
-             alt="AdminLTE Logo"
-             class="img-logo"
-             >
-        <span class="brand-text font-weight-light">NutriIF</span>
+        <div class="img-logo">
+            <span class="brand-text font-weight-light"><h4>NutriIF</h4></span>
+        </div>
     </a>
 
     <!-- Sidebar -->    

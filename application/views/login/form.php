@@ -19,6 +19,18 @@
         <script src="<?= base_url("bootstrap/js/jquery-3.5.1.slim.min.js") ?>"></script>
         <script src="<?= base_url("bootstrap/js/jquery.mask.min.js") ?>"></script>
         <script src="<?= base_url("bootstrap/js/popper.min.js") ?>"></script>
+        
+        <style>
+            .img-login{
+                width: 140px;
+                margin-bottom: 40px;
+            }
+            
+            .botao-entrar{
+                margin-top: 25px;
+                width: 100%;
+            }
+        </style>
     </head>
 
     <body>
@@ -27,7 +39,7 @@
             <div class="row">
                 <div class="col-4 offset-4 painel mt-5">
                     
-                    <center><img src="<?= base_url("bootstrap/img/logo_login.png") ?>"></center>
+                    <center><img src="<?= base_url("bootstrap/img/logo_login.png") ?>" class="img-login"></center>
                     
                     <form method="post" action="<?= site_url("login/entrar") ?>" name="novo">
 
@@ -51,8 +63,10 @@
                               </div>
                             </div> 
                                                                                                                                                                                                
-                            <div class="form-group">
-                                <center><input type="submit" value="Entrar" class="btn btn-warning btn_login"></center>
+                            <div class="form-group mr-sm-2">
+                                <div class="botao-entrar">
+                                <center><input type="submit" value="ENTRAR" class="btn btn-outline-primary btn_login"></center>
+                                </div>
                             </div>
                         </form>
                 </div>
