@@ -37,7 +37,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-4 offset-4 painel mt-5">
+                <div class="col-md-4 offset-md-4 col-sm-12 offset-sm-0 painel mt-5">
                     
                     <center><img src="<?= base_url("bootstrap/img/logo_login.png") ?>" class="img-login"></center>
                     
